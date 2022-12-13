@@ -16,9 +16,6 @@
               <div class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none" id="navbarOne">
                 <ul id="nav" class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">
                   <li class="nav-item ml-5 lg:ml-11"><a class="active"   href="/">Główna</a></li>
-                  <li class="nav-item ml-5 lg:ml-11"><a  href="/history">Historia</a></li>
-                  <li class="nav-item ml-5 lg:ml-11"><a  href="/famous">Znani ludzie</a></li>
-                  <li class="nav-item ml-5 lg:ml-11"><a  href="/lubenka">Lubenka</a></li>
                   <li class="nav-item ml-5 lg:ml-11"><a  href="/informacje">Informacje</a></li>
                 </ul>
               </div>
