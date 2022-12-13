@@ -31,11 +31,6 @@
       </div>
     </div>
     <div id="home" class="h-[900px] bg-gray relative z-10 overflow-hidden lg:flex items-center" style="background: url(https://atlasedukacji.pl/placowki/institution/gallery-photo?institutionGalleryPhotoId=727); background-size: cover; background-repeat: no-repeat;">
-      <div class="container">
-        <div class="row">
-
-        </div>
-      </div>
       <div class="header_shape hidden lg:block"><img class="logo_bg" src="http://www.zstrzeszow.pl/img/svg_icons/zst_logo.svg" alt="Header Image"></div>
       <div class="header_image flex items-center">
         <div class="image 2xl:pl-25" ><img class="max-w-full p-20" src="http://www.zstrzeszow.pl/img/svg_icons/zst_logo.svg" alt="Header Image"></div>
@@ -47,11 +42,54 @@
       </div>
     </div>
   </section>
+  <section class="services_area pt-120" id="about">
+    <div class="news_container">
+      <h1 class="pt-10">Aktualnosci</h1>
+      <hr class="w-[30%] p-3">
+      <div class="row justify-center">
+        <div class="">
+
+
+          <div class="grid overflow-hidden gap-2">
+            <div class="box row-start-1 row-end-1 col-span-2">
+              <CardElement />
+            </div>
+            <div class="box col-start-3">
+              <CardElement />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center m-5">
+            <ul class="flex list-style-none">
+              <li class="page-item disabled"><a
+                  class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
+                  href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+              <li class="page-item"><a
+                  class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                  href="#">1</a></li>
+              <li class="page-item active"><a
+                  class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
+                  href="#">2 <span class="visually-hidden"></span></a></li>
+              <li class="page-item"><a
+                  class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                  href="#">3</a></li>
+              <li class="page-item"><a
+                  class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                  href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
+import CardElement from "@/components/CardElement.vue";
+
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  components: { CardElement }
 }
 </script>
 <style>
@@ -71,7 +109,10 @@ export default {
   margin-right: auto;
   margin-left: auto;
 }
-
+.news_container {
+  margin-left: 100px;
+  margin-right: 100px;
+}
 @media (min-width: 540px){
   .container{
     max-width: 540px;
@@ -101,6 +142,7 @@ export default {
     max-width: 1320px;
   }
 }
+
 .header_shape {
   height: 100%;
   position: absolute;
