@@ -13,12 +13,18 @@
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
               </button>
-              <div class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none" id="navbarOne">
+              <div>
                 <ul id="nav" class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">
                   <li class="nav-item ml-5 lg:ml-11"><a class="active"   href="/">Główna</a></li>
                   <li class="nav-item ml-5 lg:ml-11"><a  href="/informacje">Informacje</a></li>
                 </ul>
               </div>
+<!--              <div class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none" id="navbarOne">-->
+<!--                <ul id="nav" class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">-->
+<!--                  <li class="nav-item ml-5 lg:ml-11"><a class="active"   href="/">Główna</a></li>-->
+<!--                  <li class="nav-item ml-5 lg:ml-11"><a  href="/informacje">Informacje</a></li>-->
+<!--                </ul>-->
+<!--              </div>-->
             </nav>
           </div>
         </div>
@@ -144,57 +150,16 @@ export default {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  transition-duration: 300ms;
-}
-
-.sticky {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  position: fixed;
-  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.collapse.show {
-  display: block;
 }
 
 .toggler-icon {
-  --tw-bg-opacity: 1;
-  background-color: rgba(56, 66, 77, var(--tw-bg-opacity));
+  background-color: black;
   display: block;
   position: relative;
   transition-duration: 300ms;
   height: 2px;
   width: 30px;
   margin: 6px 0;
-}
-
-.sticky .toggler-icon {
-  --tw-bg-opacity: 1;
-  background-color: rgba(56, 66, 77, var(--tw-bg-opacity));
-}
-
-.active>.toggler-icon:nth-child(1) {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-rotate: 45deg;
-  top: 7px;
-}
-
-.active>.toggler-icon:nth-child(2) {
-  opacity: 0;
-}
-
-.active>.toggler-icon:nth-child(3) {
-  top: -8px;
-  transform: rotate(135deg);
 }
 
 .navbar-nav .nav-item a {
@@ -205,13 +170,7 @@ export default {
   padding-top: 8px;
   padding-bottom: 8px;
   position: relative;
-  --tw-text-opacity: 1;
-  color: rgba(116, 126, 136, var(--tw-text-opacity));
-}
-
-.navbar-nav .nav-item a:hover{
-  --tw-text-opacity: 1;
-  color: rgba(249, 79, 79, var(--tw-text-opacity));
+  color: red;
 }
 
 .navbar-nav .nav-item a{
@@ -226,7 +185,6 @@ export default {
 }
 
 .navbar-nav .nav-item a.active {
-  --tw-text-opacity: 1;
-  color: rgba(249, 79, 79, var(--tw-text-opacity));
+  color: red;
 }
 </style>
