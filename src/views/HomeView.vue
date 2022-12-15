@@ -1,6 +1,6 @@
 <template>
   <section class="header_area">
-    <div class="navbar-area bg-white">
+    <div class="navbar-area bg-white shadow-md">
       <div class="container relative">
         <div class="row items-center">
           <div class="w-full">
