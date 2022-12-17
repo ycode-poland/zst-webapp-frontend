@@ -26,6 +26,17 @@
     background-attachment: fixed;
     min-height: 90vh;
 
+    .icons {
+        position: absolute;
+        right: -0.01%;
+        display: flex;
+        justify-content: right;
+        padding-right: 10px;
+        img {
+            padding-right: 30px;
+        }
+    }
+
     .content {
         position: relative;
         padding: 10%;
@@ -56,4 +67,10 @@
      position: fixed;
      top: 0;
     width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .icons {
+        visibility: hidden;
+    }
 }

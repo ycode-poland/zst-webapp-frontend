@@ -1,5 +1,9 @@
 <template>
   <header class="header">
+    <div class="icons">
+      <img src="http://www.zstrzeszow.pl/img/svg_icons/flag.svg" alt="">
+      <img src="http://www.zstrzeszow.pl/img/svg_icons/eagle.svg" alt="">
+    </div>
     <div class="content">
       <img src="http://www.zstrzeszow.pl/img/svg_icons/zst_logo.svg" alt="">
       <h1>ZESPÓŁ SZKÓŁ TECHNICZNYCH</h1>
