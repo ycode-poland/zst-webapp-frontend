@@ -22,7 +22,7 @@ export default {
   name: 'NavbarComponent',
   data: () => ({
     showHeader: true,
-    scrollOffset: 750,
+    scrollOffset: 800,
     elements: ['O nas', 'Plan lekcji', 'E-dziennik', 'Rekrutacja', 'Lokalizacja']
   }),
   created() {
