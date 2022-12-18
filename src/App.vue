@@ -10,6 +10,14 @@ import Footer from "@/components/FooterComponent.vue";
 export default {
   components: {
     Navbar, Footer
+  },
+  created() {
+    if (!this.$route.name.startsWith('Panel')){
+      const styleElement = document.createElement('style')
+      const textNode = document.createTextNode('body { background-color: #454545; }')
+      styleElement.append(textNode)
+      document.head.append(styleElement)
+    }
   }
 }
 </script>

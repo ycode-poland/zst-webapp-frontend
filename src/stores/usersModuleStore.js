@@ -6,17 +6,30 @@ import {useApplicationLoadingStore} from "@/stores/appLoadingStore";
 
 export const useUsersModuleStore = defineStore('UsersModuleStore', {
     state: () => ({
-        users: []
+        users: [],
+        user: null
     }),
     getters: {
         getUsers: (state) => {
             return state.users
+        },
+        getUser: (state) => {
+            return state.user;
         }
     },
     actions: {
         async findUsers(router, page){
             try {
                 const response = await axios.get(`/users?pageNumber=${page}&pageSize=6`)
+                this.users = response.data
+            }catch (error) {
+                router.push('/panel/login')
+                useToast().error('Nie masz uprawnien do tego zasobu!')
+            }
+        },
+        async findUserById(id, router) {
+            try {
+                const response = await axios.get(`/users?pageNumber=&pageSize=6`)
                 this.users = response.data
             }catch (error) {
                 router.push('/panel/login')

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$route.name !== 'LoginView' && isApplicationLoading" class="h-screen bg-white">
+  <div v-if="$route.name !== 'PanelLoginView' && isApplicationLoading" class="h-screen bg-white">
     <SidebarComponent :user="userProfile ? userProfile : user"/>
     <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
       <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
