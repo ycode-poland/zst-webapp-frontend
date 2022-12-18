@@ -13,4 +13,5 @@ export default {
 }
 </script>
 
-<style lang="less" src="@/assets/style/global.less"></style>
+<style lang="less" src="@/assets/style/global.less">
+</style>
