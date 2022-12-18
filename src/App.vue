@@ -22,6 +22,7 @@ export default {
 }
 </script>
 
+
 <style lang="less" src="@/assets/style/global.less"/>
 <style>
 @tailwind base;

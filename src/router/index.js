@@ -1,5 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from "@/views/HomeView.vue";
+import AboutUsView from "@/views/aboutus/AboutUsView.vue";
+import TimetableView from "@/views/timetable/TimetableView.vue";
 import PanelView from "@/views/dashboard/PanelView.vue";
 import LoginView from "@/views/dashboard/LoginView.vue";
 import DashboardRouteView from "@/views/dashboard/DashboardRouteView.vue";
@@ -14,6 +16,34 @@ const routes = [
     component: HomeView
   },
   {
+
+    path: '/aboutus',
+    name: 'aboutus',
+    component: AboutUsView
+    // children: [
+    //   {
+    //   path: 'blog',
+    //   name: 'blog',
+    //   component: ok
+    //   },
+    //   {
+    //     path: 'contact',
+    //     name: 'contact',
+    //     component: ok
+    //   },
+    //   {
+    //     path: 'schoolboard',
+    //     name: 'schoolboard',
+    //     component:ok
+    //   }
+    // ]
+  },
+  {
+    path: '/timetable',
+    name: 'timetable',
+    component: TimetableView
+   },
+   {
     path: '/panel',
     name: 'Panel',
     component: DashboardRouteView,
@@ -59,4 +89,5 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;
+
