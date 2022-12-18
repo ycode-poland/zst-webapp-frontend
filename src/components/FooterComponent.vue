@@ -18,7 +18,7 @@
             </a>
         </div>
         <footer>
-            <h3>&copy; 2022 Concept, Design & Code: <a href="https://ycode.ovh">ycode</a></h3>
+            <h3 tabindex="0">&copy; 2022 Concept, Design & Code: <a href="https://ycode.ovh">ycode</a></h3>
         </footer>
     </div>
 </template>
