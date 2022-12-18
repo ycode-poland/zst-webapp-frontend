@@ -4,6 +4,7 @@ import PanelView from "@/views/dashboard/PanelView.vue";
 import LoginView from "@/views/dashboard/LoginView.vue";
 import DashboardRouteView from "@/views/dashboard/DashboardRouteView.vue";
 import PanelUsersView from "@/views/dashboard/PanelUsersView.vue";
+import PanelUsersManageView from "@/views/dashboard/PanelUsersManageView.vue";
 
 
 const routes = [
@@ -28,6 +29,11 @@ const routes = [
         path: 'users',
         name: 'PanelUsersView',
         component: PanelUsersView
+      },
+      {
+        path: 'users/:userId',
+        name: 'PanelUsersManageView',
+        component: PanelUsersManageView
       },
       {
         path: 'posts',

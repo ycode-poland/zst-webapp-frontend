@@ -10,7 +10,7 @@
       <ul class="space-y-2 tracking-wide mt-8">
         <li v-for="(item, index) in items" :key="index">
           <template v-if="user.roles.find(role => role.role === item.role)">
-            <router-link :to="item.path" :class="$route.name === item.route ? 'bg-gradient-to-r text-white' : ''" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group hover:bg-gradient-to-r from-sky-600 to-cyan-400 hover:text-white">
+            <router-link :to="item.path" :class="item.route.split(' ').includes($route.name) ? 'bg-gradient-to-r text-white' : ''" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group hover:bg-gradient-to-r from-sky-600 to-cyan-400 hover:text-white">
               <font-awesome-icon :icon="item.icon" />
               <span>{{ item.name }}</span>
             </router-link>
@@ -63,7 +63,7 @@ export default {
           name: 'Użytkownicy',
           icon: 'fa-solid fa-users',
           path: '/panel/users',
-          route: 'PanelUsersView',
+          route: 'PanelUsersView PanelUsersManageView',
           role: 'global_admin'
         },
       ]
