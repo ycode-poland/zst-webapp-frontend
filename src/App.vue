@@ -1,17 +1,19 @@
 <template>
-  <Nav/>
+  <Navbar/>
   <router-view/>
+  <Footer/>
 </template>
 
-
 <script>
-import Nav from '@/components/Nav.vue';
+import Navbar from '@/components/NavbarComponent.vue';
+import Footer from "@/components/FooterComponent.vue";
 export default {
   components: {
-    Nav
+    Navbar, Footer
   }
 }
 </script>
 
-<style lang="less" src="@/assets/style/global.less">
-</style>
+
+<style lang="less" src="@/assets/style/global.less"/>
+

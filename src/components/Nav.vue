@@ -9,6 +9,7 @@
         </header>
         <nav class="navbar" :class="{ 'is-hidden': !showHeader }">
             <ul>
+                <!-- Update props with li -->
                 <li>O nas</li>
                 <li>Plan lekcji</li>
                 <li>E-dziennik</li>
@@ -35,19 +36,8 @@ export default {
     methods: {
         // Toggle if navigation is shown or hidden
         onScroll() {
-            // let nav = document.querySelector('.navbar').getBoundingClientRect();
-            // console.log(nav);
-            // let contact = document.getElementById('contact').getBoundingClientRect();
-
-            // // console.log(`${projects.top}: ${contact.top}`);
-            // if (0 > projects.top-300 && contact.top > 800) {
-            //     this.$router.push("#projects");
-            // } else if (contact.top < 800) {
-            //     this.$router.push("#contact");
-            // } else {
-            //     this.$router.push("");
-            // }
-            this.showHeader = window.pageYOffset < 0
+            let header = document.querySelector('.header').getBoundingClientRect();
+            this.showHeader = window.pageYOffset+ 100 < header.height
         },
     }
 }
