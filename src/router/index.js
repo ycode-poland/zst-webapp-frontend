@@ -7,6 +7,7 @@ import LoginView from "@/views/dashboard/LoginView.vue";
 import DashboardRouteView from "@/views/dashboard/DashboardRouteView.vue";
 import PanelUsersView from "@/views/dashboard/PanelUsersView.vue";
 import PanelUsersManageView from "@/views/dashboard/PanelUsersManageView.vue";
+import ErrorView from "@/views/ErrorView.vue";
 
 
 const routes = [
@@ -81,6 +82,11 @@ const routes = [
         component: LoginView
       }
     ]
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'ErrorView',
+    component: ErrorView
   }
 ]
 
