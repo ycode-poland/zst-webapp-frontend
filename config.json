@@ -1,0 +1,7 @@
+{
+  "app_name": "zst rzeszów",
+  "system": {
+    "production": false,
+    "api_url": "http://localhost:3000"
+  }
+}
