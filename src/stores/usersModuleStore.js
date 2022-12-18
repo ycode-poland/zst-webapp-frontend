@@ -29,8 +29,8 @@ export const useUsersModuleStore = defineStore('UsersModuleStore', {
         },
         async findUserById(id, router) {
             try {
-                const response = await axios.get(`/users?pageNumber=&pageSize=6`)
-                this.users = response.data
+                const response = await axios.get(`/users/${id}`)
+                this.user = response.data
             }catch (error) {
                 router.push('/panel/login')
                 useToast().error('Nie masz uprawnien do tego zasobu!')
