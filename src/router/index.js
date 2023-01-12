@@ -11,88 +11,88 @@ import ErrorView from "@/views/ErrorView.vue";
 
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
+	{
+		path: '/',
+		name: 'home',
+		component: HomeView
+	},
+	{
 
-    path: '/aboutus',
-    name: 'aboutus',
-    component: AboutUsView
-    // children: [
-    //   {
-    //   path: 'blog',
-    //   name: 'blog',
-    //   component: ok
-    //   },
-    //   {
-    //     path: 'contact',
-    //     name: 'contact',
-    //     component: ok
-    //   },
-    //   {
-    //     path: 'schoolboard',
-    //     name: 'schoolboard',
-    //     component:ok
-    //   }
-    // ]
-  },
-  {
-    path: '/timetable',
-    name: 'timetable',
-    component: TimetableView
-   },
-   {
-    path: '/panel',
-    name: 'Panel',
-    component: DashboardRouteView,
-    props: true,
-    children: [
-      {
-        path: '',
-        name: 'PanelView',
-        component: PanelView,
-        props: true
-      },
-      {
-        path: 'users',
-        name: 'PanelUsersView',
-        component: PanelUsersView
-      },
-      {
-        path: 'users/:userId',
-        name: 'PanelUsersManageView',
-        component: PanelUsersManageView
-      },
-      {
-        path: 'posts',
-        name: 'PanelPostsView',
-        component: PanelView
-      },
-      {
-        path: 'account',
-        name: 'PanelMyAccountView',
-        component: PanelView
-      },
-      {
-        path: 'login',
-        name: 'PanelLoginView',
-        component: LoginView
-      }
-    ]
-  },
-  {
-    path: '/:catchAll(.*)',
-    name: 'ErrorView',
-    component: ErrorView
-  }
+		path: '/aboutus',
+		name: 'aboutus',
+		component: AboutUsView
+		// children: [
+		// 	{
+		// 		path: 'blog',
+		// 		name: 'blog',
+		// 		component: ok
+		// 	},
+		// 	{
+		// 		path: 'contact',
+		// 		name: 'contact',
+		// 		component: ok
+		// 	},
+		// 	{
+		// 		path: 'schoolboard',
+		// 		name: 'schoolboard',
+		// 		component:ok
+		// 	}
+		// ]
+	},
+	{
+		path: '/timetable',
+		name: 'timetable',
+		component: TimetableView
+	},
+	{
+		path: '/panel',
+		name: 'Panel',
+		component: DashboardRouteView,
+		props: true,
+		children: [
+			{
+				path: '',
+				name: 'PanelView',
+				component: PanelView,
+				props: true
+			},
+			{
+				path: 'users',
+				name: 'PanelUsersView',
+				component: PanelUsersView
+			},
+			{
+				path: 'users/:userId',
+				name: 'PanelUsersManageView',
+				component: PanelUsersManageView
+			},
+			{
+				path: 'posts',
+				name: 'PanelPostsView',
+				component: PanelView
+			},
+			{
+				path: 'account',
+				name: 'PanelMyAccountView',
+				component: PanelView
+			},
+			{
+				path: 'login',
+				name: 'PanelLoginView',
+				component: LoginView
+			}
+		]
+	},
+{
+	path: '/:catchAll(.*)',
+	name: 'ErrorView',
+	component: ErrorView
+}
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+	history: createWebHistory(process.env.BASE_URL),
+	routes
 })
 
 export default router;
