@@ -1,36 +1,37 @@
+@import "../../global.less";
 
-input {
-  display: block;
-  width: auto;
-  margin: 20px auto;
-  padding: 10px 45px;
-  background: #b6b6b6;
-  background-size: 15px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
+.pos-obj{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    .class-obj{
+        cursor: pointer;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 6;
+        background-color: @main-color;
+        transition: background-color 0.3s, color 0.3s;
+        &:hover{
+            background-color: @object-color;
+            color: @main-color;
+        }
+    }
+}
+.input{
+    margin-top: 40px;
+    margin-bottom: 80px;
+    width: 50px;
+    font-size: xx-large;
+}
+.pos-search{
+    display: flex;
+    justify-content: center;
+    
 }
 
 
-    div{
-        main{
-            div{
-                div{
-                    background: #b6b6b6;
-                    width: 200px;
-                    height: 200px;
-                    border-radius: 10px;
-                    text-align: center;
-                    vertical-align: middle;
-                    line-height: 6;
-                }
-            }
-        }
-    }
-    .pos-obj{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 100px;
 
-    }
+  

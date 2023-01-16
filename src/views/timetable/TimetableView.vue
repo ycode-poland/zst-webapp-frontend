@@ -2,31 +2,28 @@
     <div>
         <main>
             <div class="pos-search">
-                <input type="text" placeholder="szukaj klasy..." />
+                <x-input label="szukaj..." v-model="name"/>
             </div>
             <div class="pos-obj">
-                <div class=".div1">
-                    <h1>1</h1>
+                <div class="class-obj" v-for="item in list" :key="item.id">
+                    <h1> {{item.year}}{{item.name}}</h1>
                 </div>
-                <div class=".div2">
-                    <h1>2</h1>
-                </div>
-                <div class=".div3">
-                    <h1>3</h1>
-                </div>
-                <div class=".div4">
-                    <h1>4</h1>
-                </div>
-                <div class=".div5">
-                    <h1>5</h1>
-                </div>
-                <div class=".div6">
-                    <h1>6</h1>
-                </div>
-             
-                
             </div> 
         </main>
     </div>
 </template>
 <style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"></style>
+<script>
+import axios from "axios"
+    export default {
+    data: () => ({
+      name: "",
+      list:[]
+    }),
+  async mounted(){
+    let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+    this.list=result.data;
+    console.log(this.list);
+  }
+}
+</script>

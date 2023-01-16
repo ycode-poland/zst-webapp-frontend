@@ -1,0 +1,69 @@
+@import "../global.less";
+.input {
+	position: relative;
+	height: 20px;
+	width: 430px;
+
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: -27px;
+		width: 430px;
+		display: block;
+		border-bottom: 1px solid gray;
+	}
+	label {
+		position: absolute;
+		cursor: text;
+		user-select: none;
+		z-index: 10;
+		top: 0;
+		color: grey;
+		transition: top .3s, font-size .3s;
+	}
+
+	input {
+		width: 100%;
+		border: none;
+		background-color: inherit;
+		outline: none;
+		color: #000;
+		z-index: 11;
+		position: relative;
+		font-size: x-large;
+	}
+	// / po wpisaniu do inputa i wyjściu z niego
+	&.enabled {
+		label {
+			top: -10px;
+			font-size: 17px;
+		}
+	}
+	// po kliknięciu na inputa
+	&.selected {
+		label {
+			top: -10px;
+			font-size: 20px;
+			color: #000;
+			transition: color .3s, top .3s, font-size .3s;
+		}
+	}
+
+		
+	&:after {
+		content: "";
+		border-bottom: 2px solid #000;
+        position: absolute;
+        bottom: -27px;
+        left: 50%;
+        right: 50%;
+        z-index: 10000;
+		transition: left .3s, right .3s;
+	}
+
+	&.selected:after {
+        left: 0px;
+        right: 0px;
+		transition: left .3s, right .3s;
+	}
+}
