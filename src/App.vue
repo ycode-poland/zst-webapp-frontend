@@ -1,5 +1,5 @@
 <template>
-  <Navbar v-if="!$route.name.startsWith('Panel')"/>
+  <Navbar v-if="!$route.name.startsWith('Panel') && !$route.name.startsWith('schoolboard')"/>
   <router-view/>
   <Footer v-if="!$route.name.startsWith('Panel')"/>
 </template>
@@ -13,14 +13,6 @@ export default {
   components: {
     Navbar, Footer
   },
-  created() {
-    if (!this.$route.name.startsWith('Panel')){
-      const styleElement = document.createElement('style')
-      const textNode = document.createTextNode('body { background-color: #454545; } * { box-sizing: revert !important; }')
-      styleElement.append(textNode)
-      document.head.append(styleElement)
-    }
-  }
 }
 </script>
 

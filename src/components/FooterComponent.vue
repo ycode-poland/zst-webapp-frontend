@@ -5,7 +5,7 @@
                 <Slide v-for="slide in images" :key="slide">
                     <div class="carousel__item"><a href=""><img :src="slide.imageUrl"></a></div>
                 </Slide>
-            </Carousel> 
+            </Carousel>
         </div>
         <div class="sponsors">
             <a href="https://zetorzeszow.pl/">
@@ -31,8 +31,8 @@
 </template>
 <script>
 import { Carousel, Slide } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.css'
-
+import 'vue3-carousel/dist/carousel.less'
+`   `
 export default {
     name: 'FooterComponent',
     components: {
@@ -69,7 +69,6 @@ export default {
 
 <style scoped lang="less" src="@/assets/style/components/footer.less"></style>
 <style scoped lang="less">
-
 .carousel__slide {
   padding: 5px;
 }
@@ -98,18 +97,15 @@ export default {
 .carousel__slide--prev {
   opacity: 1;
   transform: rotateY(-10deg) scale(0.95);
-
 }
 
 .carousel__slide--next {
   opacity: 1;
   transform: rotateY(10deg) scale(0.95);
-
 }
 
 .carousel__slide--active {
   opacity: 1;
   transform: rotateY(0) scale(1.1);
 }
-
 </style>

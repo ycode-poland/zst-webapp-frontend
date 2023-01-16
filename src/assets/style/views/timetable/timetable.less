@@ -1,5 +1,7 @@
 @import "../../global.less";
-
+main{
+    margin-top: 60px;
+}
 .pos-obj{
     display: flex;
     justify-content: center;
@@ -7,16 +9,20 @@
     gap: 100px;
     .class-obj{
         cursor: pointer;
+        border-radius: 20px;
         width: 200px;
         height: 200px;
+        line-height: 200px;
         text-align: center;
-        vertical-align: middle;
-        line-height: 6;
         background-color: @main-color;
         transition: background-color 0.3s, color 0.3s;
         &:hover{
             background-color: @object-color;
             color: @main-color;
+        }
+        h1{
+            font-size: 30px;
+            font-weight: bold;
         }
     }
 }
@@ -29,9 +35,5 @@
 .pos-search{
     display: flex;
     justify-content: center;
-    
+
 }
-
-
-
-  
