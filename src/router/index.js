@@ -9,7 +9,7 @@ import PanelUsersView from "@/views/dashboard/PanelUsersView.vue";
 import PanelUsersManageView from "@/views/dashboard/PanelUsersManageView.vue";
 import ErrorView from "@/views/ErrorView.vue";
 import Schoolboard from "@/views/timetable/classTimetable/ClassTimetableView.vue";
-
+import Application from  "@/views/application/ApplicationView.vue";
 
 
 const routes = [
@@ -19,10 +19,14 @@ const routes = [
         component: HomeView
     },
     {
-
         path: '/aboutus',
         name: 'aboutus',
         component: AboutUsView,
+    },
+    {
+        path: '/application',
+        name: 'application',
+        component: Application,
     },
     {
         path: '/timetable',

@@ -1,85 +1,32 @@
 <template>
     <div>
-        <header>
+        <nav>
             <div class="nav-bar">
                 <p>ok</p>
             </div>
-        </header>
+        </nav>
         <main>
             <div class="time-table">
-                <div class="table">
-                    <div class="thead">
+                <div class="table parent">
+                    <div class="thead div1">
                         <p> godz. </p>
-                        <p v-for="(item,index) in list.weekdays" :key="item.id"> {{weekdays[index]}}</p>
+                        <p v-for="day in days" :key="day"> {{ day }}</p>
                     </div>
-                    <div class="tbody">
+                    <div class="tbody div2 parent2">
                         <div class="hours">
-                            <p v-for="item in list.hours" :key="item">{{item}}</p>
+                            <p v-for="item in hours" :key="item">{{item}}</p>
                         </div>
-                        <div class="tbody-content-0">
-                            <p>--</p>
-                            <p>--</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>--</p>
-                            <p>--</p>
-                        </div>
-                        <div class="tbody-content-1">
-                            <p>--</p>
-                            <p>--</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>--</p>
-                            <p>--</p>
-                        </div>
-                        <div class="tbody-content-2">
-                            <p>--</p>
-                            <p>--</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>--</p>
-                            <p>--</p>
-                        </div>
-                        <div class="tbody-content-3">
-                            <p>--</p>
-                            <p>--</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>--</p>
-                            <p>--</p>
-                        </div>
-                        <div class="tbody-content-4">
-                            <p>--</p>
-                            <p>--</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>85</p>
-                            <p>--</p>
-                            <p>--</p>
+                        <div v-for="(item, index) in weekdays" :key="index" :class="`tbody-content-${index}`">
+                            <p v-for="lesson in item" :key="lesson">
+                                <template v-if="lesson">
+                                    <div v-for="subject in lesson.subjects" :key="subject">
+                                        <p> {{ subject.subject }}</p>
+                                        <a> {{ subject.classroom }} </a>
+                                        <a> {{ subject.teacher }}</a>
+                                    </div>
+                                </template>
+                                <template v-else>--</template>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -87,20 +34,24 @@
         </main>
     </div>
 </template>
-
 <style scoped lang="less" src="@/assets/style/views/timetable/classTimetable/schoolboard.less"/>
 <script>
-import axios from "axios"
-export default {
-    data: () => ({
-        name: "",
-        list:[],
-        weekdays:["Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
+import axios from "axios";
 
-        }),
-        async mounted(){
-            let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans/2CT");
-            this.list=result.data;
+export default {
+    name: 'ErrorView',
+    data: () => {
+        return {
+            days: ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek'],
+            hours: [],
+            weekdays: []
         }
-    }
-    </script>
+        },
+        created() {
+            axios.get('https://zst-timetable-scrapper.ycode.ovh/plans/2CT').then(response => {
+                this.hours = response.data.hours
+                this.weekdays = response.data.weekdays
+                })
+            }
+        }
+        </script>
