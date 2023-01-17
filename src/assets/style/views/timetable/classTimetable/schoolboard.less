@@ -1,30 +1,106 @@
 @import "../../../global.less";
 
 .nav-bar{
-    background-color: @object-color;
+    background-color: @object-color-2;
     height: 100px;
     color: @main-color;
 }
-table{
-    margin-top: 60px;
-    // display: flex;
-    // justify-content: center;
-    .table-head{
+.table{
+    position: relative;
+    top: 50px;
+    left: 10%;
+    width: 1500px;
+
+    .thead{
+        display: flex;
+        justify-content: space-around;
         background-color: @object-color;
         color: @main-color;
-        tr{
-            color: white;
-            th{
-                color: white;
-                padding: 50px;
-            }
+        border-radius: 5px; 
+        p{
+            padding: 20px;
+            display: inline-block;
         }
     }
-    tbody{
-        tr{
-            td{
-                display: block;
+    .tbody{
+        .hours{
+            display: inline-block;
+            p{
+                padding: 20px;
+                font-weight: bold;
+            }
+        }
+        .tbody-content-0{
+            position: relative;
+            left: 190px;
+            display: inline-block;
+            p{
+                padding: 20px
+            }
+        }
+        .tbody-content-1{
+            position: relative;
+            left: 420px;
+            display: inline-block;
+            p{
+                padding: 20px
+            }
+        }
+        .tbody-content-2{
+            position: relative;
+            left: 600px;
+            display: inline-block;
+            p{
+                padding: 20px
+            }
+        }
+        .tbody-content-3{
+            position: relative;
+            left: 790px;
+            display: inline-block;
+            p{
+                padding: 20px
+            }
+        }
+        .tbody-content-4{
+            position: relative;
+            left: 990px;
+            display: inline-block;
+            p{
+                padding: 20px
             }
         }
     }
 }
+// table{
+//     margin-top: 60px;
+//     width: 1500px;
+//     position: relative;
+//     top: 50%;
+//     left: 10%;
+//     .table-head{
+//         background-color: @object-color;
+//         color: @main-color;
+//
+//         tr{
+//             color: white;
+//             th{
+//                 color: white;
+//                 padding: 30px;
+//             }
+//         }
+//     }
+//     tbody{
+//
+//         tr{
+//             .hours{
+//
+//                 font-weight: bold;
+//                 padding: 30px;
+//             }
+//             td{
+//                 padding: 30px;
+//             }
+//         }
+//     }
+// }

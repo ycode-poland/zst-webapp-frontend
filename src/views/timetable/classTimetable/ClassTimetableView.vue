@@ -7,40 +7,82 @@
         </header>
         <main>
             <div class="time-table">
-                <table>
-                    <thead class="table-head">
-                        <tr>
-                            <th> godz. </th>
-                            <th v-for="(item,index) in list.weekdays" :key="item.id"> {{weekdays[index]}} </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td v-for="item in list.hours" :key="item"></td>
-                        </tr>
-                        <tr>
-                            <td v-for="item in list.weekdays" :key="item">
-                                {{item[0]}}
-                                <!-- <template v-if="item!=null">
-                                  {{item[0].subjects}}
-                                </template> -->
-
-                            </td>
-                        </tr>
-                        <!-- <tr>
-                            <td v-for="item in list.weekdays['1']" :key="item"></td>
-                        </tr>
-                        <tr>
-                            <td v-for="item in list.weekdays['2']" :key="item"></td>
-                        </tr>
-                        <tr>
-                            <td v-for="item in list.weekdays['3']" :key="item"></td>
-                        </tr>
-                        <tr>
-                            <td v-for="item in list.weekdays['4']" :key="item"></td>
-                        </tr> -->
-                    </tbody>
-                </table>
+                <div class="table">
+                    <div class="thead">
+                        <p> godz. </p>
+                        <p v-for="(item,index) in list.weekdays" :key="item.id"> {{weekdays[index]}}</p>
+                    </div>
+                    <div class="tbody">
+                        <div class="hours">
+                            <p v-for="item in list.hours" :key="item">{{item}}</p>
+                        </div>
+                        <div class="tbody-content-0">
+                            <p>--</p>
+                            <p>--</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>--</p>
+                            <p>--</p>
+                        </div>
+                        <div class="tbody-content-1">
+                            <p>--</p>
+                            <p>--</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>--</p>
+                            <p>--</p>
+                        </div>
+                        <div class="tbody-content-2">
+                            <p>--</p>
+                            <p>--</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>--</p>
+                            <p>--</p>
+                        </div>
+                        <div class="tbody-content-3">
+                            <p>--</p>
+                            <p>--</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>--</p>
+                            <p>--</p>
+                        </div>
+                        <div class="tbody-content-4">
+                            <p>--</p>
+                            <p>--</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>85</p>
+                            <p>--</p>
+                            <p>--</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
