@@ -1,1 +1,68 @@
 @import "../../global.less";
+
+.application-cont{
+    position: relative;
+    left: 10%;
+    top: 80px;
+    width: 1600px;
+    height: auto;
+
+    h1{
+        font-size: 80px;
+        font-weight: 600;
+    }
+    h2{
+        font-size: 43px;
+        font-weight: 400;
+        color: @txt-color;
+    }
+    h3{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 16px 0px;
+    }
+    .application{
+        ul {
+            display: block;
+            margin-left: 40px;
+            li {
+                display: block;
+                position: relative;
+            }
+            li:not(:last-child) {
+                margin-bottom: 16px;
+            }
+            li:before {
+                content: "";
+                position: absolute;
+                top: 21px;
+                left: -20px;
+                margin-top: -.9em;
+                background: @txt-color;
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+            }
+        }
+        span{
+            font-weight: bold;
+        }
+        p{
+            .rekru-link{
+                display: inline-block;
+                padding: 0;
+            }
+        }
+        a{
+            display: block;
+            padding-top: 30px;
+            font-size: 18px;
+            font-weight: 200;
+            color: @txt-color;
+            width: max-content;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

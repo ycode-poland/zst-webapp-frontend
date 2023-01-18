@@ -39,7 +39,7 @@ export default {
             },
             {
                 name: "Rekrutacja",
-                path: "/recrutation"
+                path: "/application"
             },
             {
                 name: "Lokalizacja",

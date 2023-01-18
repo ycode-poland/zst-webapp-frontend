@@ -8,8 +8,8 @@ import DashboardRouteView from "@/views/dashboard/DashboardRouteView.vue";
 import PanelUsersView from "@/views/dashboard/PanelUsersView.vue";
 import PanelUsersManageView from "@/views/dashboard/PanelUsersManageView.vue";
 import ErrorView from "@/views/ErrorView.vue";
-import Schoolboard from "@/views/timetable/classTimetable/ClassTimetableView.vue";
-import Application from  "@/views/application/ApplicationView.vue";
+import SchoolboardView from "@/views/timetable/schoolboard/SchoolboardView.vue";
+import ApplicationView from  "@/views/application/ApplicationView.vue";
 
 
 const routes = [
@@ -26,7 +26,7 @@ const routes = [
     {
         path: '/application',
         name: 'application',
-        component: Application,
+        component: ApplicationView,
     },
     {
         path: '/timetable',
@@ -36,7 +36,7 @@ const routes = [
     {
         path: '/timetable/schoolboard',
         name: 'schoolboard',
-        component: Schoolboard
+        component: SchoolboardView
     },
     {
         path: '/panel',
