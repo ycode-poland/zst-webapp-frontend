@@ -32,11 +32,19 @@ const routes = [
         path: '/timetable',
         name: 'timetable',
         component: TimetableView,
+        children: [
+            {
+                path: '',
+                name: '2c',
+                component:
+            }
+        ]
     },
     {
-        path: '/timetable/schoolboard',
+        path: '/timetable/:class',
         name: 'schoolboard',
-        component: SchoolboardView
+        component: SchoolboardView,
+
     },
     {
         path: '/panel',
