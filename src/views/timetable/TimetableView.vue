@@ -6,7 +6,7 @@
             </div>
             <div class="pos-obj">
                 <div class="class-obj" v-for="item in list" :key="item.id">
-                    <h1> {{item.year}}{{item.name}}</h1>
+                    <router-link :to="`/timetable/${item.year}${item.name}`"><h1>{{item.year}}{{item.name}}</h1></router-link>
                 </div>
             </div>
         </main>

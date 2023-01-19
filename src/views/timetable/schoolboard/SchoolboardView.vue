@@ -7,6 +7,7 @@
         </nav>
         <main>
             <div class="time-table">
+                <h1>{{ $route.params.class }}</h1>
                 <table>
                     <thead>
                         <tr>
@@ -51,7 +52,7 @@ export default {
         }
         },
         created() {
-            axios.get('https://zst-timetable-scrapper.ycode.ovh/plans/2CT?direction=Row').then(response => {
+            axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
                 this.list = response.data.weekdays
                 this.hours = response.data.hours
                 this.weekdays = response.data.weekdays
