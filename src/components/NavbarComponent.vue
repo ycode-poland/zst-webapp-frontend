@@ -27,7 +27,7 @@ export default {
         elements: [
             {
                 name: "O nas",
-                path: "/about"
+                path: "/aboutus"
             },
             {
                 name: "Plan lekcji",
