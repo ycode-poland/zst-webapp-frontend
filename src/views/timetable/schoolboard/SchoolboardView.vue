@@ -7,29 +7,31 @@
         </nav>
         <main>
             <div class="time-table">
-                <div class="table parent">
-                    <div class="thead div1">
-                        <p> godz. </p>
-                        <p v-for="day in days" :key="day"> {{ day }}</p>
-                    </div>
-                    <div class="tbody div2 parent2">
-                        <div class="hours">
-                            <p v-for="item in hours" :key="item">{{item}}</p>
-                        </div>
-                        <div v-for="(item, index) in weekdays" :key="index" :class="`tbody-content-${index}`">
-                            <p v-for="lesson in item" :key="lesson">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="number">Nr.</th>
+                            <th class="hours"> godz. </th>
+                            <th v-for="(day,index) in days" :key="day"> {{days[index]}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr v-for="(item,i) in weekdays" :key="item">
+                            <td class="number">{{i+1}}.</td>
+                            <td class="hours">
+                                {{hours[i]}}
+                            </td>
+                            <td v-for="lesson in item" :key="lesson" class="td-tbody">
                                 <template v-if="lesson">
-                                    <div v-for="subject in lesson.subjects" :key="subject">
-                                        <p> {{ subject.subject }}</p>
-                                        <a> {{ subject.classroom }} </a>
-                                        <a> {{ subject.teacher }}</a>
-                                    </div>
+                                    <template v-for="subject in lesson.subjects" :key="subject">
+                                        <p> {{subject.subject}} <span>S.{{subject.classroom}} <span class="teacher">{{subject.teacher}}</span></span></p><br>
+                                    </template>
                                 </template>
-                                <template v-else>--</template>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
@@ -44,11 +46,13 @@ export default {
         return {
             days: ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek'],
             hours: [],
-            weekdays: []
+            weekdays: [],
+            list: []
         }
         },
         created() {
-            axios.get('https://zst-timetable-scrapper.ycode.ovh/plans/2CT').then(response => {
+            axios.get('https://zst-timetable-scrapper.ycode.ovh/plans/2CT?direction=Row').then(response => {
+                this.list = response.data.weekdays
                 this.hours = response.data.hours
                 this.weekdays = response.data.weekdays
                 })
