@@ -31,7 +31,7 @@
 </template>
 <script>
 import { Carousel, Slide } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.less'
+import 'vue3-carousel/dist/carousel.css'
 `   `
 export default {
     name: 'FooterComponent',
