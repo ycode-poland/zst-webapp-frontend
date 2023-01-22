@@ -7,6 +7,12 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     gap: 100px;
+    @media (max-width: @sizes[tablet]){
+        gap: 75px;
+    }
+    @media (max-width: @sizes[mobile]){
+        gap: 50px;
+    }
     .class-obj{
         cursor: pointer;
         border-radius: 20px;
@@ -16,6 +22,17 @@ main{
         text-align: center;
         background-color: @main-color;
         transition: background-color 0.3s, color 0.3s;
+        @media (max-width: @sizes[tablet]){
+            height: 150px;
+            width: 150px;
+            line-height: 150px;
+        }
+        @media (max-width: @sizes[mobile]){
+            height: 100px;
+            width: 100px;
+            line-height: 100px;
+
+        }
         &:hover{
             background-color: @object-color;
             color: @main-color;

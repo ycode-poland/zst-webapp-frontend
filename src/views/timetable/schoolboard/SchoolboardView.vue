@@ -2,12 +2,17 @@
     <div>
         <nav>
             <div class="nav-bar">
-                <p>ok</p>
+                <ul>
+                    <li>odział</li>
+                    <li>sala</li>
+                    <li>nauczyciel</li>
+                    <li></li>
+                </ul>
+                <p>{{ $route.params.class }}</p>
             </div>
         </nav>
         <main>
             <div class="time-table">
-                <h1>{{ $route.params.class }}</h1>
                 <table>
                     <thead>
                         <tr>
