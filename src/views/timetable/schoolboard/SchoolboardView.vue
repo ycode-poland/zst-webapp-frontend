@@ -2,13 +2,21 @@
     <div>
         <nav>
             <div class="nav-bar">
+            <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
+            <p>{{ $route.params.class }}</p>
                 <ul>
-                    <li>odział</li>
-                    <li>sala</li>
-                    <li>nauczyciel</li>
-                    <li></li>
+                    <li @click="up = !up">odział<font-awesome-icon v-if="!up" icon="fa-solid fa-caret-down" /><font-awesome-icon v-else icon="fa-solid fa-caret-up" /></li>
+                    <li>sala<font-awesome-icon icon="fa-solid fa-caret-down" /> </li>
+                    <li>nauczyciel<font-awesome-icon icon="fa-solid fa-caret-down" /></li>
                 </ul>
-                <p>{{ $route.params.class }}</p>
+            </div>
+            <div class="unit">
+                <ul v-if='up' class="unit-down">
+                    <template v-for="item in list1" :key="item.id">
+                        <li><router-link :to="`/timetable/${item.year}${item.name}`"><h1>{{ item.year }}{{ item.name }}</h1></router-link></li>
+                    </template>
+                </ul>
+                <ul v-else class="unit-up"></ul>
             </div>
         </nav>
         <main>
@@ -22,7 +30,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr v-for="(item,i) in weekdays" :key="item">
                             <td class="number">{{i+1}}.</td>
                             <td class="hours">
@@ -48,20 +55,31 @@ import axios from "axios";
 
 export default {
     name: 'ErrorView',
-    data: () => {
-        return {
-            days: ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek'],
-            hours: [],
-            weekdays: [],
-            list: []
-        }
-        },
-        created() {
-            axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
-                this.list = response.data.weekdays
-                this.hours = response.data.hours
-                this.weekdays = response.data.weekdays
-                })
-            }
-        }
-        </script>
+    data: () => ({
+        days: ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek'],
+        hours: [],
+        weekdays: [],
+        list: [],
+        list1: [],
+        unit: false,
+    }),
+    async created() {
+        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+            this.list1=result.data;
+            this.list = response.data.weekdays;
+            this.hours = response.data.hours;
+            this.weekdays = response.data.weekdays;
+        })
+    },
+    async updated(){
+        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+            this.list1=result.data;
+            this.list = response.data.weekdays
+            this.hours = response.data.hours
+            this.weekdays = response.data.weekdays
+        })
+    }
+}
+</script>
