@@ -2,23 +2,26 @@
     <div>
         <nav>
             <div class="nav-bar">
-            <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
-            <p>{{ $route.params.class }}</p>
-                <ul>
-                    <li @click="up = !up">odział<font-awesome-icon v-if="!up" icon="fa-solid fa-caret-down" /><font-awesome-icon v-else icon="fa-solid fa-caret-up" /></li>
-                    <li>sala<font-awesome-icon icon="fa-solid fa-caret-down" /> </li>
-                    <li>nauczyciel<font-awesome-icon icon="fa-solid fa-caret-down" /></li>
-                </ul>
-            </div>
-            <div class="unit">
-                <ul v-if='up' class="unit-down">
-                    <template v-for="item in list1" :key="item.id">
-                        <li><router-link :to="`/timetable/${item.year}${item.name}`"><h1>{{ item.year }}{{ item.name }}</h1></router-link></li>
-                    </template>
-                </ul>
-                <ul v-else class="unit-up"></ul>
+                <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
+                <p>{{ $route.params.class }}</p>
+                <p>ok</p>
             </div>
         </nav>
+        <div class="side-bar">
+            <div class="elements-sidebar">
+                <p @click="up = !up">odział<font-awesome-icon v-if="!up" icon="fa-solid fa-caret-down" /><font-awesome-icon v-else icon="fa-solid fa-caret-up" /></p>
+                <div class="unit">
+                    <ul v-if='up' class="unit-down">
+                        <template v-for="item in list1" :key="item.id">
+                            <li><router-link :to="`/timetable/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
+                        </template>
+                    </ul>
+                    <ul v-else class="unit-up"></ul>
+                </div>
+                <p>sala<font-awesome-icon icon="fa-solid fa-caret-down" /> </p>
+                <p>nauczyciel<font-awesome-icon icon="fa-solid fa-caret-down" /></p>
+            </div>
+        </div>
         <main>
             <div class="time-table">
                 <table>
