@@ -1,30 +1,43 @@
 <template>
-  <Navbar v-if="!$route.name.startsWith('Panel')"/>
-  <router-view/>
-  <Footer v-if="!$route.name.startsWith('Panel')"/>
+    <Navbar v-if="!$route.name.startsWith('Panel') && !$route.name.startsWith('schoolboard')" :elements="elements"/>
+    <router-view/>
+    <Footer v-if="!$route.name.startsWith('Panel')"/>
 </template>
 
 <script>
 import Navbar from '@/components/NavbarComponent.vue';
 import Footer from "@/components/FooterComponent.vue";
+
 export default {
-  components: {
-    Navbar, Footer
-  },
-  created() {
-    if (!this.$route.name.startsWith('Panel')){
-      const styleElement = document.createElement('style')
-      const textNode = document.createTextNode('body { background-color: #454545; } * { box-sizing: revert !important; }')
-      styleElement.append(textNode)
-      document.head.append(styleElement)
-    }
-  }
+    data: () => ({
+        elements: [
+            {
+                name: "O nas",
+                path: "/aboutus"
+            },
+            {
+                name: "Plan lekcji",
+                path: "/timetable",
+            },
+            {
+                name: "E-dziennik",
+                path: "https://adfslight.resman.pl/LoginPage.aspx"
+            },
+            {
+                name: "Rekrutacja",
+                path: "/application"
+            },
+            {
+                name: "Lokalizacja",
+                path: "/localization"
+            }
+        ]
+    }),
+    components: {
+        Navbar, Footer
+    },
+
 }
 </script>
 
 <style lang="less" src="@/assets/style/global.less"/>
-<style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</style>

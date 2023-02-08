@@ -1,0 +1,103 @@
+@import "../../global.less";
+
+.application-cont{
+    margin: 0 10%;
+    margin-top: 5%;
+    width: auto;
+    height: auto;
+    h1{
+        font-size: 80px;
+        font-weight: 600;
+        @media (max-width: @sizes[tablet]){
+            font-size: 60px;
+        }
+        @media (max-width: @sizes[mobile]){
+            font-size: 45px;
+        }
+    }
+    h2{
+        font-size: 43px;
+        font-weight: 400;
+        color: @txt-color;
+        @media (max-width: @sizes[tablet]){
+            font-size: 35px;
+        }
+        @media (max-width: @sizes[mobile]){
+            font-size: 30px;
+        }
+    }
+    h3{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 16px 0px;
+        @media (max-width: @sizes[tablet]){
+            font-size: 20px;
+        }
+        @media (max-width: @sizes[mobile]){
+            font-size: 18px;
+        }
+    }
+    ul {
+        display: block;
+        margin-left: 40px;
+        padding: 10px 0px;
+        li {
+            display: block;
+            position: relative;
+        }
+        li:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        li:before {
+            content: "";
+            position: absolute;
+            top: 21px;
+            left: -20px;
+            margin-top: -.9em;
+            background: @txt-color;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+        }
+    }
+
+    span{
+        font-weight: bold;
+    }
+    p{
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        padding:15px 0;
+        .rekru-link{
+            padding: 0;
+            display: inline-block;
+        }
+    }
+    a{
+        display: block;
+        padding-top: 30px;
+        font-size: 18px;
+        font-weight: 200;
+        color: @txt-color;
+        &:hover{
+            text-decoration: underline;
+        }
+
+    }
+    .h3-color{
+        font-size: 27px;
+        color: @txt-color;
+    }
+    .sekre{
+        margin-top: 5%;
+        padding: 0;
+        font-size: 31px;
+        @media (max-width: @sizes[mobile]){
+            font-size: 18px;
+        }
+        .sekre-tell{
+            color: @txt-color;
+        }
+    }
+}

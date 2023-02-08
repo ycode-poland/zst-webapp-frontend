@@ -11,7 +11,10 @@ import {
     faUser,
     faLock,
     faEdit,
-    faPlus
+    faPlus,
+    faCaretUp,
+    faCaretDown,
+
 } from "@fortawesome/free-solid-svg-icons";
 import 'vue-toastification/dist/index.css';
 import Toast, { useToast } from 'vue-toastification';
@@ -22,7 +25,7 @@ import config from '../config.json';
 import modalElement from "@/components/elements/ModalElement.vue";
 import inputElement from "@/components/elements/InputElement.vue";
 
-library.add(faArrowLeft, faUsers, faHouse, faNewspaper, faUser, faLock, faEdit, faPlus)
+library.add(faArrowLeft, faUsers, faHouse, faNewspaper, faUser, faLock, faEdit, faPlus, faCaretUp, faCaretDown)
 
 axios.defaults.baseURL = config.system.api_url;
 axios.defaults.headers.Authorization = `Bearer ${localStorage.accessToken}`
@@ -30,7 +33,7 @@ axios.defaults.headers.Authorization = `Bearer ${localStorage.accessToken}`
 const app = createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .component('y-modal', modalElement)
-    .component('y-input', inputElement)
+    .component('x-input', inputElement)
     .use(Toast)
     .use(router)
     .use(store)

@@ -1,29 +1,32 @@
+@import "../global.less";
+
 .sponsors {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-color: @object-color;
+    margin-top: 60px;
     a {
         width: 270px;
         text-align: center;
         padding: 20px 0;
         margin: 0 30px;
 
-        &:hover {
-            background-color: #FFF;
-            
-            img {
-                filter: invert(100%);
-            }
+        img {
+            filter: invert(0%);;
+            transition: filter 0.3s ease;
+            &:hover {
+                filter: invert(0%);
+           }
         }
     }
 }
 footer {
     text-align: center;
     padding: 20px;
-    
+    background-color: @object-color;
     h3 {
-        color: white;
+        color: #ffffff;
         font-weight: lighter;
     }
 

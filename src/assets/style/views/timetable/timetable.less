@@ -1,36 +1,56 @@
-
-input {
-  display: block;
-  width: auto;
-  margin: 20px auto;
-  padding: 10px 45px;
-  background: #b6b6b6;
-  background-size: 15px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
+@import "../../global.less";
+main{
+    margin-top: 60px;
 }
+.pos-obj{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    @media (max-width: @sizes[tablet]){
+        gap: 75px;
+    }
+    @media (max-width: @sizes[mobile]){
+        gap: 50px;
+    }
+    .class-obj{
+        cursor: pointer;
+        border-radius: 20px;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        background-color: @main-color;
+        transition: background-color 0.3s, color 0.3s;
+        @media (max-width: @sizes[tablet]){
+            height: 150px;
+            width: 150px;
+            line-height: 150px;
+        }
+        @media (max-width: @sizes[mobile]){
+            height: 100px;
+            width: 100px;
+            line-height: 100px;
 
-
-    div{
-        main{
-            div{
-                div{
-                    background: #b6b6b6;
-                    width: 200px;
-                    height: 200px;
-                    border-radius: 10px;
-                    text-align: center;
-                    vertical-align: middle;
-                    line-height: 6;
-                }
-            }
+        }
+        &:hover{
+            background-color: @object-color;
+            color: @main-color;
+        }
+        h1{
+            font-size: 30px;
+            font-weight: bold;
         }
     }
-    .pos-obj{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 100px;
+}
+.input{
+    margin-top: 40px;
+    margin-bottom: 80px;
+    width: 50px;
+    font-size: xx-large;
+}
+.pos-search{
+    display: flex;
+    justify-content: center;
 
-    }
+}

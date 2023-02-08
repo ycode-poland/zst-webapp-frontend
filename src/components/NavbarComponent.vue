@@ -10,9 +10,10 @@
             <h3>im. Eugeniusza Kwiatkowskiego w Rzeszowie</h3>
         </div>
     </header>
-    <nav class="navbar" id="navbar" :class="{ 'is-hidden': !showHeader }">
+    <nav class="navbar" id="navbar" v-if="!$route.name.startsWith('timetable')" :class="{ 'is-hidden': !showHeader }">
+        <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
         <template v-for="(element, i) in elements" :key="i">
-            <a :href="element.path" v-if="element.path.startsWith('http')" class="hua">{{ element.name }}</a>
+            <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
             <router-link :to="element.path" v-else class="hua">{{ element.name }}</router-link>
         </template>
     </nav>
@@ -21,31 +22,10 @@
 <script>
 export default {
     name: 'NavbarComponent',
+    props: ['elements'],
     data: () => ({
         showHeader: true,
         fixed: false,
-        elements: [
-            {
-                name: "O nas",
-                path: "/about"
-            },
-            {
-                name: "Plan lekcji",
-                path: "/timetable"
-            },
-            {
-                name: "E-dziennik",
-                path: "https://adfslight.resman.pl/LoginPage.aspx"
-            },
-            {
-                name: "Rekrutacja",
-                path: "/recrutation"
-            },
-            {
-                name: "Lokalizacja",
-                path: "/localization"
-            }
-        ]
     }),
     computed: {
         isExternalLink() {
@@ -54,6 +34,7 @@ export default {
     },
     created() {
         window.addEventListener('scroll', this.onScroll)
+        console.log(this.foo)
     },
     beforeUnmount() {
         window.removeEventListener('scroll', this.onScroll)
@@ -64,6 +45,11 @@ export default {
             this.showHeader = window.pageYOffset < header.height
         }
     }
+
+
+
+
+
 }
 </script>
 

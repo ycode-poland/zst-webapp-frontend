@@ -1,0 +1,104 @@
+@import "../../../global.less";
+nav{
+    .nav-bar{
+        z-index: 100;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        background-color: @object-color;
+        height: 70px;
+        color: @main-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            text-align: left;
+            font-size: 2em;
+            display: inline-block;
+        }
+        ul{
+            display: inline-block;
+            list-style: none;
+            li{
+                font-size: 2em;
+                padding-left: 20px;
+                display: inline-block;
+            }
+        }
+    }
+}
+.side-bar{
+    z-index: 100;
+    overflow-y: auto;
+    position: fixed;
+    left: 0px;
+    top: 70px;
+    background-color: @object-color;
+    width: 10%;
+    height: 100%;
+    padding-left: 1%;
+    .elements-sidebar{
+        p{
+            color: @main-color;
+            font-size: 30px;
+        }
+        .unit{
+            color: @main-color;
+            ul{
+                li{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+}
+table{
+    position: relative;
+    top: 100px;
+    margin-left: 14%;
+    text-align: center;
+    z-index: 10;
+    .number{
+        width: 58px;
+    }
+    .hours{
+        font-weight: bold;
+        width: 90px;
+    }
+    thead{
+        background-color: @object-color;
+        color: @main-color;
+        tr{
+            height: 58px;
+            color: white;
+            th{
+                color: white;
+            }
+        }
+    }
+    tbody{
+        tr:nth-child(even) {
+            background: #CCC
+        }
+        tr{
+            padding: 200px 0 !important;
+            td{
+                height: 68px;
+                width: 270px;
+                font-size: 16px;
+                p{
+                    display: inline-block;
+                    padding: 5px;
+                    font-weight: bold;
+                    span{
+                        font-weight: normal;
+                        .teacher{
+                            color: @txt-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
