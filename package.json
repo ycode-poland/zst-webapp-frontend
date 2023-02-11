@@ -19,10 +19,8 @@
     "pinia": "^2.0.28",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vue3-carousel": "^0.2.9",
-    "vuex": "^4.0.0",
-
-    "vue-toastification": "2.0.0-rc.5"
+    "vue-toastification": "2.0.0-rc.5",
+    "vue3-carousel": "^0.2.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -38,6 +36,7 @@
     "less": "^4.0.0",
     "less-loader": "^8.0.0",
     "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^0.6.1",
+    "vue-cli-plugin-tailwindcss": "~0.1.1"
   }
 }

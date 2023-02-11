@@ -63,6 +63,56 @@
                 </div>
             </div>
         </div>
+      <div class="posts">
+        <h1>SZKOLNE WYDARZENIA I OGŁOSZENIA</h1>
+<!--        <div class="parent">-->
+<!--          <div class="div1">-->
+<!--            <div class="blog-slider" v-for="index in 5" :key="index">-->
+<!--              <div class="blog-slider__wrp swiper-wrapper">-->
+<!--                <div class="blog-slider__item swiper-slide">-->
+<!--                  <div class="blog-slider__img">-->
+<!--                    <img src="http://www.zstrzeszow.pl/article/2022-2023/talenty_jutra/IMG_5416_t.JPG" alt="">-->
+<!--                  </div>-->
+<!--                  <div class="blog-slider__content">-->
+<!--                    <span class="blog-slider__code">29 Stycznia 2023 | Zamieszczone przez <b>Administrator</b></span>-->
+<!--                    <div class="blog-slider__title">Ogólnopolska Gala Finałowa "Talenty Jutra"</div>-->
+<!--                    <div class="blog-slider__text">W dniu 10.01.2023r. pięcioro uczniów naszej szkoły uczestniczyło w wycieczce do Planetarium w Chorzowie, gdzie wzięli udział w Ogólnopolskiej Gali Finałowej "Talenty Jutra". W ramach wydarzenia odbyły się dwa wykłady na temat funkcji mózgu oraz początkowej fazy opracowywania leków. Młodzież wraz z przewodnikiem zwiedziła planetarium i obejrzała pokaz audiowizualny pod tytułem „Jesteśmy gwiazdami”, przedstawiający proces powstania kosmosu.</div>-->
+<!--                    <a href="#" class="blog-slider__button">Czytaj wiecej</a>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="div2">4</div>-->
+<!--        </div>-->
+        <div class="cards">
+          <div class="blog-slider" v-for="index in 1" :key="index">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="http://www.zstrzeszow.pl/article/2022-2023/talenty_jutra/IMG_5416_t.JPG" alt="">
+                </div>
+                <div class="blog-slider__content">
+                  <span class="blog-slider__code">29 Stycznia 2023 | Zamieszczone przez <b>Administrator</b></span>
+                  <div class="blog-slider__title">Ogólnopolska Gala Finałowa "Talenty Jutra"</div>
+                  <div class="blog-slider__text">W dniu 10.01.2023r. pięcioro uczniów naszej szkoły uczestniczyło w wycieczce do Planetarium w Chorzowie, gdzie wzięli udział w Ogólnopolskiej Gali Finałowej "Talenty Jutra". W ramach wydarzenia odbyły się dwa wykłady na temat funkcji mózgu oraz początkowej fazy opracowywania leków. Młodzież wraz z przewodnikiem zwiedziła planetarium i obejrzała pokaz audiowizualny pod tytułem „Jesteśmy gwiazdami”, przedstawiający proces powstania kosmosu.</div>
+                  <a href="#" class="blog-slider__button">Czytaj wiecej</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <button class="arrow">
+            <font-awesome-icon icon="fa-solid fa-angle-left" />
+          </button>
+          <button v-for="index in 7" :key="index" class="pagination__number">{{ index }}</button>
+          <button class="pagination__number pagination__number--active">8</button>
+          <button class="arrow">
+            <font-awesome-icon icon="fa-solid fa-angle-right" />
+          </button>
+        </div>
+      </div>
     </div>
 </template>
 <script>

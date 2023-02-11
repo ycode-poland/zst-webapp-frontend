@@ -1,7 +1,9 @@
 <template>
+  <div class="content-wrap">
     <Navbar v-if="!$route.name.startsWith('Panel') && !$route.name.startsWith('schoolboard')" :elements="elements"/>
     <router-view/>
-    <Footer v-if="!$route.name.startsWith('Panel')"/>
+  </div>
+    <Footer v-if="!$route.name.startsWith('Panel') && !$route.name.startsWith('schoolboard')"/>
 </template>
 
 <script>
