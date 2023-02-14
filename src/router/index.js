@@ -25,22 +25,22 @@ const routes = [
                 component: HomeView
             },
             {
-                path: '/aboutus',
+                path: '/onas',
                 name: 'aboutus',
                 component: AboutUsView,
             },
             {
-                path: '/application',
+                path: '/rekrutacja',
                 name: 'application',
                 component: ApplicationView,
             },
             {
-                path: '/timetable',
+                path: '/plan',
                 name: 'timetable',
                 component: TimetableView,
             },
             {
-                path: '/timetable/:class',
+                path: '/plan/:class',
                 name: 'schoolboard',
                 component: SchoolboardView
             }

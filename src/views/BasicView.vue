@@ -14,11 +14,11 @@ export default {
     elements: [
       {
         name: "O nas",
-        path: "/aboutus"
+        path: "/onas"
       },
       {
         name: "Plan lekcji",
-        path: "/timetable",
+        path: "/plan",
       },
       {
         name: "E-dziennik",
@@ -26,7 +26,7 @@ export default {
       },
       {
         name: "Rekrutacja",
-        path: "/application"
+        path: "/rekrutacja"
       },
       {
         name: "Lokalizacja",
