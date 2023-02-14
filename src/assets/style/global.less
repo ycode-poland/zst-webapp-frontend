@@ -91,4 +91,30 @@ body {
     height: 100vh;
     background-color: @object-color;
     z-index: 1000000001;
+
+    .wrapper {
+        position: relative;
+        width: 233px;
+        height: 241px;
+        img.outer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: rotateLogo 5s linear infinite;
+        }
+        img.inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+@keyframes rotateLogo {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }

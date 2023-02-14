@@ -1,6 +1,9 @@
 <template>
   <div class="page-loader" v-if="isloaded">
-    <img src="@/assets/images/zst_logo.svg" alt="">
+    <div class="wrapper">
+      <img class="outer" src="@/assets/images/outer-logo.png" alt="">
+      <img class="inner" src="@/assets/images/inner-logo.png" alt="">
+    </div>
   </div>
 </template>
 <script>
