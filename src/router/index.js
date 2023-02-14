@@ -10,33 +10,40 @@ import PanelUsersManageView from "@/views/dashboard/PanelUsersManageView.vue";
 import ErrorView from "@/views/ErrorView.vue";
 import SchoolboardView from "@/views/timetable/schoolboard/SchoolboardView.vue";
 import ApplicationView from  "@/views/application/ApplicationView.vue";
+import BasicView from "@/views/BasicView.vue";
 
 
 const routes = [
     {
         path: '/',
-        name: 'home',
-        component: HomeView
-    },
-    {
-        path: '/aboutus',
-        name: 'aboutus',
-        component: AboutUsView,
-    },
-    {
-        path: '/application',
-        name: 'application',
-        component: ApplicationView,
-    },
-    {
-        path: '/timetable',
-        name: 'timetable',
-        component: TimetableView,
-    },
-    {
-        path: '/timetable/:class',
-        name: 'schoolboard',
-        component: SchoolboardView
+        component: BasicView,
+        children: [
+            {
+                path: '/',
+                name: 'home',
+                component: HomeView
+            },
+            {
+                path: '/aboutus',
+                name: 'aboutus',
+                component: AboutUsView,
+            },
+            {
+                path: '/application',
+                name: 'application',
+                component: ApplicationView,
+            },
+            {
+                path: '/timetable',
+                name: 'timetable',
+                component: TimetableView,
+            },
+            {
+                path: '/timetable/:class',
+                name: 'schoolboard',
+                component: SchoolboardView
+            }
+        ]
     },
     {
         path: '/panel',
