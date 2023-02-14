@@ -11,6 +11,7 @@ import ErrorView from "@/views/ErrorView.vue";
 import SchoolboardView from "@/views/timetable/schoolboard/SchoolboardView.vue";
 import ApplicationView from  "@/views/application/ApplicationView.vue";
 import BasicView from "@/views/BasicView.vue";
+import ProgrammerView from  "@/views/jobs/ProgrammerView.vue";
 
 
 const routes = [
@@ -44,6 +45,11 @@ const routes = [
                 component: SchoolboardView
             }
         ]
+    },
+    {
+        path: '/profession/programmer',
+        name: 'programmer',
+        component: ProgrammerView
     },
     {
         path: '/panel',
