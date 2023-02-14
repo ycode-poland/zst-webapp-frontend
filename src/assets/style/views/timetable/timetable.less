@@ -35,11 +35,20 @@ main{
         }
         &:hover{
             background-color: @object-color;
-            color: @main-color;
+        }
+        a{
+            text-decoration: none;
         }
         h1{
             font-size: 30px;
             font-weight: bold;
+            color: black;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            &:hover{
+                color: @main-color;
+
+            }
         }
     }
 }
@@ -52,5 +61,4 @@ main{
 .pos-search{
     display: flex;
     justify-content: center;
-
 }

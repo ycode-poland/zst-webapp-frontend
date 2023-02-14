@@ -2,7 +2,7 @@
     <div>
         <nav>
             <div class="nav-bar">
-                <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
+                <router-link to="/"><font-awesome-icon icon="fa-solid fa-house" /></router-link>
                 <p>{{ $route.params.class }}</p>
                 <p>ok</p>
             </div>
@@ -75,14 +75,14 @@ export default {
             this.weekdays = response.data.weekdays;
         })
     },
-    async updated(){
-        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
-            this.list1=result.data;
-            this.list = response.data.weekdays
-            this.hours = response.data.hours
-            this.weekdays = response.data.weekdays
-        })
-    }
+    // async updated(){
+    //     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+    //     axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+    //         this.list1=result.data;
+    //         this.list = response.data.weekdays
+    //         this.hours = response.data.hours
+    //         this.weekdays = response.data.weekdays
+    //     })
+    // }
 }
 </script>

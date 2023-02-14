@@ -11,7 +11,7 @@
         </div>
     </header>
     <nav class="navbar" id="navbar" v-if="!$route.name.startsWith('timetable')" :class="{ 'is-hidden': !showHeader }">
-        <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
+        <router-link to="/"><font-awesome-icon icon="fa-solid fa-house"/></router-link>
         <template v-for="(element, i) in elements" :key="i">
             <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
             <router-link :to="element.path" v-else class="hua">{{ element.name }}</router-link>
