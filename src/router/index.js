@@ -13,6 +13,7 @@ import ApplicationView from  "@/views/application/ApplicationView.vue";
 import BasicView from "@/views/BasicView.vue";
 import ProgrammerView from  "@/views/jobs/ProgrammerView.vue";
 import MechanicView from  "@/views/jobs/MechanicView.vue";
+import InformaticanView from  "@/views/jobs/InformaticanView.vue";
 
 
 const routes = [
@@ -56,6 +57,11 @@ const routes = [
         path: '/profession/mechanican',
         name: 'mechanican',
         component: MechanicView
+    },
+    {
+        path: '/profession/informatican',
+        name: 'informatican',
+        component: InformaticanView
     },
     {
         path: '/panel',
