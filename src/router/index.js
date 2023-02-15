@@ -10,34 +10,41 @@ import PanelUsersManageView from "@/views/dashboard/PanelUsersManageView.vue";
 import ErrorView from "@/views/ErrorView.vue";
 import SchoolboardView from "@/views/timetable/schoolboard/SchoolboardView.vue";
 import ApplicationView from  "@/views/application/ApplicationView.vue";
+import BasicView from "@/views/BasicView.vue";
 import ProgrammerView from  "@/views/jobs/ProgrammerView.vue";
 
 
 const routes = [
     {
         path: '/',
-        name: 'home',
-        component: HomeView
-    },
-    {
-        path: '/aboutus',
-        name: 'aboutus',
-        component: AboutUsView,
-    },
-    {
-        path: '/application',
-        name: 'application',
-        component: ApplicationView,
-    },
-    {
-        path: '/timetable',
-        name: 'timetable',
-        component: TimetableView,
-    },
-    {
-        path: '/timetable/:class',
-        name: 'schoolboard',
-        component: SchoolboardView
+        component: BasicView,
+        children: [
+            {
+                path: '/',
+                name: 'home',
+                component: HomeView
+            },
+            {
+                path: '/onas',
+                name: 'aboutus',
+                component: AboutUsView,
+            },
+            {
+                path: '/rekrutacja',
+                name: 'application',
+                component: ApplicationView,
+            },
+            {
+                path: '/plan',
+                name: 'timetable',
+                component: TimetableView,
+            },
+            {
+                path: '/plan/:class',
+                name: 'schoolboard',
+                component: SchoolboardView
+            }
+        ]
     },
     {
         path: '/profession/programmer',

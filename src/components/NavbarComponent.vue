@@ -20,39 +20,29 @@
     </template>
   </nav>
 </template>
-
 <script>
 export default {
-    name: 'NavbarComponent',
-    props: ['elements'],
-    data: () => ({
-        showHeader: true,
-        fixed: false,
-    }),
-    computed: {
-        isExternalLink() {
-            return typeof this.to === 'string' && this.to.startsWith('http')
-        },
+  name: 'NavbarComponent',
+  props: ['elements'],
+  data: () => ({
+    showHeader: true,
+    fixed: false,
+  }),
+  created() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll() {
+      let header = document.querySelector('.header').getBoundingClientRect();
+      this.showHeader = window.pageYOffset < header.height
     },
-    created() {
-        window.addEventListener('scroll', this.onScroll)
-        console.log(this.foo)
-    },
-    beforeUnmount() {
-        window.removeEventListener('scroll', this.onScroll)
-    },
-    methods: {
-        onScroll() {
-            let header = document.querySelector('.header').getBoundingClientRect();
-            this.showHeader = window.pageYOffset < header.height
-        }
+    scrollToTop() {
+      window.scrollTo(0,0);
     }
-
-
-
-
-
+  }
 }
 </script>
-
 <style scoped lang="less" src="@/assets/style/components/navbar.less" />
