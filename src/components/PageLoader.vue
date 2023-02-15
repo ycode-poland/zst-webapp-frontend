@@ -1,8 +1,9 @@
 <template>
   <div class="page-loader" v-if="isloaded">
     <div class="wrapper">
-      <img class="outer" src="@/assets/images/outer-logo.png" alt="">
-      <img class="inner" src="@/assets/images/inner-logo.png" alt="">
+      <img class="outer1" src="@/assets/images/outer-logo1.png" alt="" draggable="false">
+      <img class="outer2" src="@/assets/images/outer-logo2.png" alt="" draggable="false">
+      <img class="inner" src="@/assets/images/inner-logo.png" alt="" draggable="false">
     </div>
   </div>
 </template>
