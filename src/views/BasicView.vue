@@ -5,38 +5,30 @@
   </div>
   <Footer v-if="!$route.name.startsWith('schoolboard')"/>
 </template>
-<script>
+<script setup>
 import Navbar from '@/components/NavbarComponent.vue';
 import Footer from "@/components/FooterComponent.vue";
 
-export default {
-  data: () => ({
-    elements: [
-      {
-        name: "O nas",
-        path: "/onas"
-      },
-      {
-        name: "Plan lekcji",
-        path: "/plan",
-      },
-      {
-        name: "E-dziennik",
-        path: "https://adfslight.resman.pl/LoginPage.aspx"
-      },
-      {
-        name: "Rekrutacja",
-        path: "/rekrutacja"
-      },
-      {
-        name: "Lokalizacja",
-        path: "/localization"
-      }
-    ]
-  }),
-  components: {
-    Navbar, Footer
+const elements = [
+  {
+    name: "O nas",
+    path: "/onas"
   },
-
-}
+  {
+    name: "Plan lekcji",
+    path: "/plan",
+  },
+  {
+    name: "E-dziennik",
+    path: "https://adfslight.resman.pl/LoginPage.aspx"
+  },
+  {
+    name: "Rekrutacja",
+    path: "/rekrutacja"
+  },
+  {
+    name: "Lokalizacja",
+    path: "/localization"
+  }
+]
 </script>

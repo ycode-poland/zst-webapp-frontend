@@ -18,11 +18,12 @@
 </template>
 <style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"/>
 <script>
-import axios from "axios";
+import {useTimetableStore} from "@/stores/useTimetableStore";
+import {computed} from "vue";
+
 export default {
     data: () => ({
         name: "",
-        list:[],
         props: ['elements'],
         elements: [
             {
@@ -39,9 +40,16 @@ export default {
             }
         ]
     }),
-    async mounted(){
-        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-        this.list=result.data;
+  setup() {
+    const store = useTimetableStore()
+    store.findAllClasses()
+    return {
+      list: computed(() => store.getClasses)
     }
+  }
+    // async mounted(){
+    //     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+    //     this.list=result.data;
+    // }
 }
 </script>

@@ -1,13 +1,9 @@
 <template>
   <div class="error">
-    <h1>Not Found!</h1>
+    <h1>Nie odnaleziono</h1>
+<!--    <img src="https://http.cat/404" alt="">-->
   </div>
 </template>
-<script>
-export default {
-  name: 'ErrorView'
-}
-</script>
 <style lang="less" scoped>
 .error {
   position: relative;
