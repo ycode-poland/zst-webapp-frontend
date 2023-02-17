@@ -49,7 +49,7 @@ const routes = [
         ]
     },
     {
-        path: '/profession/programmer',
+        path: '/zawod/programista',
         name: 'programmer',
         component: ProgrammerView
     },

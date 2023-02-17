@@ -10,7 +10,7 @@
         <main>
             <div class="pos-obj">
                 <div class="class-obj" v-for="item in list" :key="item.id">
-                    <router-link :to="`/timetable/${item.year}${item.name}`"><h1>{{item.year}}{{item.name}}</h1></router-link>
+                    <router-link :to="`/plan/${item.year}${item.name}`"><h1>{{item.year}}{{item.name}}</h1></router-link>
                 </div>
             </div>
         </main>
@@ -28,15 +28,15 @@ export default {
         elements: [
             {
                 name: 'odziały',
-                path: '/timetable/1AT'
+                path: '/plan/1AT'
             },
             {
                 name: 'nauczyciele',
-                path: '/timetable/2AT'
+                path: '/plan/2AT'
             },
             {
                 name: 'sale',
-                path: '/timetable/3AT'
+                path: '/plan/3AT'
             }
         ]
     }),
