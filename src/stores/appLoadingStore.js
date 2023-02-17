@@ -14,7 +14,9 @@ export const useApplicationLoadingStore = defineStore("LoadingStore", {
             this.loaded = false;
         },
         applicationLoaded() {
-            this.loaded = true
+            setTimeout(() => {
+                this.loaded = true
+            }, 500)
         }
     }
 })

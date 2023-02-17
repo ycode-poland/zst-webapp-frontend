@@ -80,6 +80,10 @@ body {
     transform-origin: bottom left;
 }
 
+.hidden {
+    opacity: 0;
+    visibility: hidden !important;
+}
 .page-loader {
     display: flex;
     justify-content: center;
@@ -91,17 +95,30 @@ body {
     height: 100vh;
     background-color: @object-color;
     z-index: 1000000001;
-
+    transition: all 0.5s ease-in-out;
     .wrapper {
         position: relative;
         width: 233px;
         height: 241px;
-        img.outer {
+
+        > img {
+            user-select: none;
+        }
+
+        img.outer1 {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
             animation: rotateLogo 5s linear infinite;
         }
+
+        img.outer2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: rotateLogo2 5s linear infinite;
+        }
+
         img.inner {
             position: absolute;
             top: 50%;
@@ -112,9 +129,17 @@ body {
 }
 @keyframes rotateLogo {
     0% {
-        transform: rotateZ(0deg);
+        transform: translate(-50%, -50%) rotateZ(0deg);
     }
     100% {
-        transform: rotateZ(360deg);
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+@keyframes rotateLogo2 {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(-360deg);
     }
 }
