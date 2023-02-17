@@ -21,15 +21,15 @@ export default {
     data: () => ({
         elements: [
             {
-                name: 'odziały',
+                name: 'Odziały',
                 path: '/plan/1AT'
             },
             {
-                name: 'nauczyciele',
+                name: 'Nauczyciele',
                 path: '/plan/2AT'
             },
             {
-                name: 'sale',
+                name: 'Sale',
                 path: '/plan/3AT'
             }
         ]
@@ -37,11 +37,11 @@ export default {
     components: {
         Navbar
     },
-  setup() {
-    const store = useTimetableStore()
-    store.findAllClasses()
-    return {
-      list: computed(() => store.getClasses)
+    setup() {
+        const store = useTimetableStore()
+        store.findAllClasses()
+        return {
+        list: computed(() => store.getClasses)
     }
   }
 

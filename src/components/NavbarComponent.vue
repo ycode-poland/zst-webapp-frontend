@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" id="navbar" v-if="!$route.name.startsWith('timetable')" :class="{ 'is-hidden': !showHeader }">
+  <nav class="navbar" id="navbar" :class="{ 'is-hidden': !showHeader }">
     <router-link to="/" @click="scrollToTop">
       <font-awesome-icon icon="fa-solid fa-house"/>
     </router-link>
