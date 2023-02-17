@@ -12,7 +12,7 @@
   </header>
   <nav class="navbar" id="navbar" v-if="!$route.name.startsWith('timetable')" :class="{ 'is-hidden': !showHeader }">
     <router-link to="/" @click="scrollToTop">
-      <font-awesome-icon icon="fa-solid fa-house" />
+      <font-awesome-icon icon="fa-solid fa-house"/>
     </router-link>
     <template v-for="(element, i) in elements" :key="i">
       <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
