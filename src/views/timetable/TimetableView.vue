@@ -1,12 +1,6 @@
 <template>
     <div>
-        <nav class="navbar" id="navbar" :class="{ 'is-hidden': !showHeader }">
-            <a href="/"><font-awesome-icon icon="fa-solid fa-house" /></a>
-            <template v-for="(element, i) in elements" :key="i">
-                <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
-                <router-link :to="element.path" v-else class="hua">{{ element.name }}</router-link>
-            </template>
-        </nav>
+        <Navbar :elements="elements"/>
         <main>
             <div class="pos-obj">
                 <div class="class-obj" v-for="item in list" :key="item.id">
@@ -16,33 +10,35 @@
         </main>
     </div>
 </template>
-<style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"/>
+<style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"></style>
+
 <script>
 import {useTimetableStore} from "@/stores/useTimetableStore";
 import {useApplicationLoadingStore} from "@/stores/appLoadingStore";
 import {computed} from "vue";
+import Navbar from '@/components/NavbarComponent.vue';
 
 export default {
     data: () => ({
-        name: "",
-        props: ['elements'],
         elements: [
             {
-                name: 'odziały',
+                name: 'Odziały',
                 path: '/plan/1AT'
             },
             {
-                name: 'nauczyciele',
+                name: 'Nauczyciele',
                 path: '/plan/2AT'
             },
             {
-                name: 'sale',
+                name: 'Sale',
                 path: '/plan/3AT'
             }
         ]
     }),
+    components: {
+        Navbar
+    },
     setup() {
-
         const appLoading = useApplicationLoadingStore();
         appLoading.applicationLoading();
         const store = useTimetableStore()
@@ -53,9 +49,6 @@ export default {
             list: computed(() => store.getClasses)
         }
     }
-// async mounted(){
-//     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-//     this.list=result.data;
-// }
+  }
 }
 </script>

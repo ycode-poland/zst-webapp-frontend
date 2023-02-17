@@ -13,7 +13,7 @@
                 <div class="unit">
                     <ul v-if='up' class="unit-down">
                         <template v-for="item in list1" :key="item.id">
-                            <li><router-link :to="`/timetable/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
+                            <li><router-link :to="`/plan/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
                         </template>
                     </ul>
                     <ul v-else class="unit-up"></ul>
