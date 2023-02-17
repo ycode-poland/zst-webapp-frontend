@@ -1,5 +1,6 @@
 <template>
     <PageLoader v-if="!isApplicationLoading"/>
+    <Header v-if="!$route.name.startsWith('schoolboard')" :elements="elements"/>
     <Navbar v-if="!$route.name.startsWith('schoolboard')" :elements="elements"/>
     <router-view/>
     <Footer v-if="!$route.name.startsWith('schoolboard')"/>
@@ -10,6 +11,7 @@ import {useApplicationLoadingStore} from "@/stores/appLoadingStore";
 import {computed} from "vue";
 import Navbar from '@/components/NavbarComponent.vue';
 import Footer from "@/components/FooterComponent.vue";
+import Header from "@/components/HeaderComponent.vue";
 
 const appLoading = useApplicationLoadingStore();
 appLoading.applicationLoading();

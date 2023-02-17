@@ -21,7 +21,7 @@
           </div>
           <div class="card-back">
             <p>Użytkowanie obrabiarek skrawających, organizacja i nadzorowanie procesów produkcji maszyn i urządzeń, komputerowe wspomaganie projektowania CAD</p>
-            <router-link to="/zawod/mechanik">Odwiedź</router-link>
+            <router-link to="/zawod/mechanik" @click="scrollToTop">Odwiedź</router-link>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
               </div>
               <div class="card-back">
                   <p>Ekonomia, marketing, public-relations, grafika komputerowa, fotografia cyfrowa, marketing, planowanie i tworzenie reklamy wizualnej </p>
-                  <router-link to="/zawod/raklama">Odwiedź</router-link>
+                  <router-link to="/zawod/raklama" @click="scrollToTop">Odwiedź</router-link>
               </div>
           </div>
       </div>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="card-back">
                         <p>Montaż, instalacja i eksploatacja układów i urządzeń elektronicznych, projektowanie inteligentnych domów, automatyka, robotyka, informatyka </p>
-                        <router-link to="/zawod/elektronik">Odwiedź</router-link>
+                        <router-link to="/zawod/elektronik" @click="scrollToTop">Odwiedź</router-link>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="card-back">
                         <p>Projektowanie i programowanie stron/aplikacji webowych, projektowanie i administrowanie sieciami LAN oraz serwerowymi systemami operacyjnymi</p>
-                        <router-link to="/zawod/informatyk">Odwiedź</router-link>
+                        <router-link to="/zawod/informatyk" @click="scrollToTop">Odwiedź</router-link>
                     </div>
                 </div>
             </div>
@@ -109,8 +109,12 @@ export default {
         onScroll() {
             let header = document.querySelector('.header').getBoundingClientRect();
             this.navDetached = window.pageYOffset < header.height
+        },
+        scrollToTop() {
+          window.scrollTo(0,0);
         }
     }
+
 }
 </script>
 <style scoped lang="less" src="@/assets/style/views/home.less"/>
