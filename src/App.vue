@@ -1,5 +1,5 @@
 <template>
-  <PageLoader v-if="!isApplicationLoading"/>
+  <PageLoader :class="{ hidden: isApplicationLoading }"/>
   <router-view/>
 </template>
 <script setup>
@@ -9,7 +9,7 @@ import {computed} from "vue";
 
 const appLoading = useApplicationLoadingStore();
 appLoading.applicationLoading();
-appLoading.applicationLoaded()
+appLoading.applicationLoaded();
 const isApplicationLoading = computed(() => appLoading.isApplicationLoading)
 </script>
 <style lang="less" src="@/assets/style/global.less"/>

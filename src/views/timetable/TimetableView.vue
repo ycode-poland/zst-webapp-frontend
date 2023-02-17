@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="navbar" id="navbar" :class="{ 'is-hidden': !showHeader }">
-            <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
+            <a href="/"><font-awesome-icon icon="fa-solid fa-house" /></a>
             <template v-for="(element, i) in elements" :key="i">
                 <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
                 <router-link :to="element.path" v-else class="hua">{{ element.name }}</router-link>
@@ -19,6 +19,7 @@
 <style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"/>
 <script>
 import {useTimetableStore} from "@/stores/useTimetableStore";
+import {useApplicationLoadingStore} from "@/stores/appLoadingStore";
 import {computed} from "vue";
 
 export default {
@@ -40,16 +41,21 @@ export default {
             }
         ]
     }),
-  setup() {
-    const store = useTimetableStore()
-    store.findAllClasses()
-    return {
-      list: computed(() => store.getClasses)
+    setup() {
+
+        const appLoading = useApplicationLoadingStore();
+        appLoading.applicationLoading();
+        const store = useTimetableStore()
+        store.findAllClasses().then(() => {
+            appLoading.applicationLoaded();
+        })
+        return {
+            list: computed(() => store.getClasses)
+        }
     }
-  }
-    // async mounted(){
-    //     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-    //     this.list=result.data;
-    // }
+// async mounted(){
+//     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+//     this.list=result.data;
+// }
 }
 </script>

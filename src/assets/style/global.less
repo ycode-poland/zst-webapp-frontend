@@ -83,6 +83,7 @@ body {
 .hidden {
     opacity: 0;
     visibility: hidden !important;
+    transition: all 0.5s ease-in-out;
 }
 .page-loader {
     display: flex;
@@ -95,7 +96,6 @@ body {
     height: 100vh;
     background-color: @object-color;
     z-index: 1000000001;
-    transition: all 0.5s ease-in-out;
     .wrapper {
         position: relative;
         width: 233px;
