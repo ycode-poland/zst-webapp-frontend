@@ -1,5 +1,5 @@
 <template>
-  <div class="page-loader" :class="isloaded ? '' : 'hidden'">
+  <div class="page-loader">
     <div class="wrapper">
       <img class="outer1" src="@/assets/images/outer-logo1.png" alt="" draggable="false">
       <img class="outer2" src="@/assets/images/outer-logo2.png" alt="" draggable="false">
@@ -10,9 +10,9 @@
 <script>
 export default {
   name: 'PageLoader',
-  data: () => ({
-    isloaded: true
-  }),
+  // data: () => ({
+  //   isloaded: true
+  // }),
   // mounted() {
   //   document.onreadystatechange = () => {
   //     if (document.readyState === 'complete') {

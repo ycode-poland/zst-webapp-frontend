@@ -14,6 +14,7 @@
 
 <script>
 import {useTimetableStore} from "@/stores/useTimetableStore";
+import {useApplicationLoadingStore} from "@/stores/appLoadingStore";
 import {computed} from "vue";
 import Navbar from '@/components/NavbarComponent.vue';
 
@@ -38,12 +39,16 @@ export default {
         Navbar
     },
     setup() {
+        const appLoading = useApplicationLoadingStore();
+        appLoading.applicationLoading();
         const store = useTimetableStore()
-        store.findAllClasses()
+        store.findAllClasses().then(() => {
+            appLoading.applicationLoaded();
+        })
         return {
-        list: computed(() => store.getClasses)
+            list: computed(() => store.getClasses)
+        }
     }
   }
-
 }
 </script>

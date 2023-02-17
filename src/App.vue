@@ -15,7 +15,7 @@ import Header from "@/components/HeaderComponent.vue";
 
 const appLoading = useApplicationLoadingStore();
 appLoading.applicationLoading();
-appLoading.applicationLoaded()
+appLoading.applicationLoaded();
 const isApplicationLoading = computed(() => appLoading.isApplicationLoading)
 
 
