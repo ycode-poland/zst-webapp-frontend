@@ -3,9 +3,13 @@
     <router-link to="/" @click="scrollToTop">
       <font-awesome-icon icon="fa-solid fa-house"/>
     </router-link>
+     <font-awesome-icon icon="fa-solid fa-bars" id="bars"/>
     <template v-for="(element, i) in elements" :key="i">
-      <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
-      <router-link :to="element.path" @click="scrollToTop" v-else class="hua">{{ element.name }}</router-link>
+        <div class="navbar-elements">
+            <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
+            <router-link :to="element.path" @click="scrollToTop" v-else class="hua">{{ element.name }}</router-link>
+        </div>
+
     </template>
   </nav>
 </template>
@@ -30,7 +34,7 @@ export default {
     },
     scrollToTop() {
       window.scrollTo(0,0);
-    }
+    },
   }
 }
 </script>

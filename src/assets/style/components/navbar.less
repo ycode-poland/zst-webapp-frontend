@@ -1,3 +1,5 @@
+@import "../global.less";
+
 .is-hidden {
     top: 0;
     width: 100%;
@@ -6,10 +8,36 @@
     transition: width .2s;
 }
 
+.navbar-elements{
+    @media (max-width: @sizes[tablet]){
+        display: none;
+    }
+}
 .fixed {
     position: sticky;
 }
-
+.fa-house{
+    @media (max-width: @sizes[tablet]){
+            font-size: 50px;
+            position: relative;
+            left: 100%;
+    }
+    @media (max-width: @sizes[mobile]){
+            font-size: 35px;
+    }
+}
+.fa-bars{
+    display: none;
+    font-size: 50px;
+    position: relative;
+    right: 10%;
+    @media (max-width: @sizes[tablet]){
+        display: inline-block;
+    }
+    @media (max-width: @sizes[mobile]){
+            font-size: 35px;
+    }
+}
 @media only screen and (max-width: 600px) {
     .icons {
         visibility: hidden;
