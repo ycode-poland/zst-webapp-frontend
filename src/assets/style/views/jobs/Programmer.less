@@ -6,19 +6,20 @@
     width: auto;
     height: auto;
     h1{
-        font-size: 60px;
+        font-size: 50px;
         font-weight: 600;
         @media (max-width: @sizes[tablet]){
-            font-size: 60px;
+            font-size: 40px;
         }
         @media (max-width: @sizes[mobile]){
-            font-size: 35px;
+            font-size: 30px;
         }
     }
     h2{
         font-size: 30px;
         font-weight: 400;
         color: @txt-color;
+        margin-top: 5px;
         @media (max-width: @sizes[tablet]){
             font-size: 35px;
         }
@@ -41,17 +42,19 @@
         font-size: 15px;
         font-weight: 500;
         padding: 16px 0px;
+        color: rgba(0, 0, 0, 0.596);
         @media (max-width: @sizes[tablet]){
-            font-size: 20px;
+            font-size: 14px;
         }
         @media (max-width: @sizes[mobile]){
-            font-size: 18px;
+            font-size: 12px;
         }
     }
     ul {
         display: block;
         margin-left: 30px;
         padding: 10px 0px;
+        font-size: 16px;
         li {
             display: block;
             position: relative;
@@ -77,7 +80,7 @@
     }
     p{
         display: block;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 400;
         padding:15px 0;
         .rekru-link{
@@ -102,14 +105,21 @@
     .imgContainer{
     display: grid;
     grid-template-columns: auto auto auto ;
+    @media (max-width: @sizes[tablet]){
+        grid-template-columns: auto auto;
+    }
     @media (max-width: @sizes[mobile]){
         grid-template-columns: auto;
+        margin-left: 5px;
     }
+    margin-top: 3px;
+    margin-bottom: 10px;
     }
     .imgContainer2{
         display: grid;
         grid-template-columns: auto auto;
-        
+        margin-top: 3px;
+        margin-bottom: 10px;
         @media (max-width: @sizes[mobile]){
             grid-template-columns: auto;
         }
@@ -122,6 +132,8 @@
         border: 2px solid rgb(212, 212, 212);
         border-radius: 10px;
         padding: 5px;
+        background-color: white;
+        margin-top: 2px;
     }
 }
 
