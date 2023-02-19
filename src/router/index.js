@@ -13,6 +13,8 @@ import ApplicationView from  "@/views/application/ApplicationView.vue";
 import ProgrammerView from  "@/views/jobs/ProgrammerView.vue";
 import MechanicView from  "@/views/jobs/MechanicView.vue";
 import InformaticanView from  "@/views/jobs/InformaticanView.vue";
+import MarketerView from  "@/views/jobs/MarketerView.vue";
+import ElectronicanView from  "@/views/jobs/ElectronicanView.vue";
 
 
 const routes = [
@@ -56,6 +58,16 @@ const routes = [
             path: '/zawod/informatyk',
             name: 'informatican',
             component: InformaticanView
+        },
+        {
+            path: '/zawod/elektronik',
+            name: 'electronican',
+            component: ElectronicanView
+        },
+        {
+            path: '/zawod/raklama',
+            name: 'marketer',
+            component: MarketerView
         },
         {
             path: '/panel',
