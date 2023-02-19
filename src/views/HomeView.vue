@@ -81,21 +81,23 @@
             </div>
           </div>
         </div>
-        <div class="pagination">
+        <!-- <div class="pagination">
           <button class="arrow">
             <font-awesome-icon icon="fa-solid fa-angle-left" />
           </button>
           <button v-for="index in 7" :key="index" class="pagination__number">{{ index }}</button>
-          <button class="pagination__number pagination__number--active">8</button>
+          <button class="pagination__number pagination__number-active">8</button>
           <button class="arrow">
             <font-awesome-icon icon="fa-solid fa-angle-right" />
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
 </template>
 <script>
+
 export default {
+
     data: () => ({
         navDetached: false,
     }),
@@ -114,7 +116,6 @@ export default {
           window.scrollTo(0,0);
         }
     }
-
 }
 </script>
 <style scoped lang="less" src="@/assets/style/views/home.less"/>

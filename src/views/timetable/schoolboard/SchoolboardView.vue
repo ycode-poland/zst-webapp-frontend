@@ -59,7 +59,7 @@ import axios from "axios";
 export default {
     name: 'ErrorView',
     data: () => ({
-        days: ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek'],
+        days: ['Poniedziałek', 'Wtorek', 'środa', 'Czwartek', 'Piątek'],
         hours: [],
         weekdays: [],
         list: [],

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar :elements="elements"/>
+        <Navbar :elements="elements" />
         <main>
             <div class="pos-obj">
                 <div class="class-obj" v-for="item in list" :key="item.id">
@@ -20,6 +20,7 @@ import Navbar from '@/components/NavbarComponent.vue';
 
 export default {
     data: () => ({
+        isOpen: false,
         elements: [
             {
                 name: 'Odziały',
@@ -32,6 +33,10 @@ export default {
             {
                 name: 'Sale',
                 path: '/plan/3AT'
+            },
+            {
+                name: 'Zastępstwa',
+                path: '/plan/zastepstwa'
             }
         ]
     }),
@@ -49,6 +54,6 @@ export default {
             list: computed(() => store.getClasses)
         }
     }
-  }
+}
 
 </script>
