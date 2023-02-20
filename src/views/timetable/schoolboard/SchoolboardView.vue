@@ -4,24 +4,10 @@
             <div class="nav-bar">
                 <router-link to="/"><font-awesome-icon icon="fa-solid fa-house" /></router-link>
                 <p>{{ $route.params.class }}</p>
-                <p>ok</p>
+                <font-awesome-icon icon="fa-solid fa-bars"/>
             </div>
         </nav>
-        <div class="side-bar">
-            <div class="elements-sidebar">
-                <p @click="up = !up">odział<font-awesome-icon v-if="!up" icon="fa-solid fa-caret-down" /><font-awesome-icon v-else icon="fa-solid fa-caret-up" /></p>
-                <div class="unit">
-                    <ul v-if='up' class="unit-down">
-                        <template v-for="item in list1" :key="item.id">
-                            <li><router-link :to="`/plan/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
-                        </template>
-                    </ul>
-                    <ul v-else class="unit-up"></ul>
-                </div>
-                <p>sala<font-awesome-icon icon="fa-solid fa-caret-down" /> </p>
-                <p>nauczyciel<font-awesome-icon icon="fa-solid fa-caret-down" /></p>
-            </div>
-        </div>
+
         <main>
             <div class="time-table">
                 <table>
@@ -49,7 +35,27 @@
                     </tbody>
                 </table>
             </div>
+            <!-- <div class="time-table-response">
+            </div> -->
         </main>
+        <div class="side-bar">
+            <div class="params">
+                <p>{{ $route.params.class }}</p>
+            </div>
+            <div class="elements-sidebar">
+                <p @click="up = !up" class="branch">Odział<font-awesome-icon v-if="!up" icon="fa-solid fa-caret-down" /><font-awesome-icon v-else icon="fa-solid fa-caret-up" /></p>
+                <div class="unit">
+                    <ul v-if='up' class="unit-down">
+                        <template v-for="item in list1" :key="item.id">
+                            <li><router-link :to="`/plan/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
+                        </template>
+                    </ul>
+                    <ul v-else class="unit-up"></ul>
+                </div>
+                <p>Sala<font-awesome-icon icon="fa-solid fa-caret-down" /> </p>
+                <p>Nauczyciel<font-awesome-icon icon="fa-solid fa-caret-down" /></p>
+            </div>
+        </div>
     </div>
 </template>
 <style scoped lang="less" src="@/assets/style/views/timetable/classTimetable/schoolboard.less"/>
@@ -75,14 +81,14 @@ export default {
             this.weekdays = response.data.weekdays;
         })
     },
-    // async updated(){
-    //     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-    //     axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
-    //         this.list1=result.data;
-    //         this.list = response.data.weekdays
-    //         this.hours = response.data.hours
-    //         this.weekdays = response.data.weekdays
-    //     })
-    // }
+    async updated(){
+        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+            this.list1=result.data;
+            this.list = response.data.weekdays
+            this.hours = response.data.hours
+            this.weekdays = response.data.weekdays
+        })
+    }
 }
 </script>
