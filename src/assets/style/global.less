@@ -24,62 +24,18 @@ body {
     padding-bottom: 300px;
 }
 
-.navbar {
-    overflow: hidden;
-    position: sticky;
-    margin: auto;
-    width: 80%;
-    height: 100px;
-    background-color: @main-color;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: -50px;
-    z-index: 1000000000;
-    transition: width .2s;
-    -webkit-box-shadow: 0px 7px 16px -9px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 0px 7px 16px -9px rgba(66, 68, 90, 1);
-    box-shadow: 0px 7px 16px -9px rgba(66, 68, 90, 1);
-    a {
-        display: inline-block;
-        font-size: 25px;
-        color: #000;
-        text-decoration: none;
-    }
-}
-
 .footer {
-    //position: relative;
-    //top: 800px;
-    position: absolute;
-    bottom: -60px;
+    position: relative;
+    bottom: -80px;
     width: 100%;
     height: 300px;
 }
 
-
-.hua {
-    display: inline-block;
-    position: relative;
+.hidden {
+    opacity: 0;
+    visibility: hidden !important;
+    transition: all 0.5s ease-in-out;
 }
-.hua:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #000;
-    text-shadow: 2px 2px #000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-.hua:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
 .page-loader {
     display: flex;
     justify-content: center;
@@ -91,4 +47,50 @@ body {
     height: 100vh;
     background-color: @object-color;
     z-index: 1000000001;
+    .wrapper {
+        position: relative;
+        width: 233px;
+        height: 241px;
+
+        > img {
+            user-select: none;
+        }
+
+        img.outer1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: rotateLogo 5s linear infinite;
+        }
+
+        img.outer2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: rotateLogo2 5s linear infinite;
+        }
+
+        img.inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+@keyframes rotateLogo {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+@keyframes rotateLogo2 {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(-360deg);
+    }
 }

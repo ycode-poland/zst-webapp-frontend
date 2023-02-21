@@ -1,47 +1,59 @@
 <template>
     <div>
-        <nav class="navbar" id="navbar" :class="{ 'is-hidden': !showHeader }">
-            <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
-            <template v-for="(element, i) in elements" :key="i">
-                <a :href="element.path" v-if="element.path.startsWith('http')" class="hua" >{{ element.name }}</a>
-                <router-link :to="element.path" v-else class="hua">{{ element.name }}</router-link>
-            </template>
-        </nav>
+        <Navbar :elements="elements" />
         <main>
             <div class="pos-obj">
                 <div class="class-obj" v-for="item in list" :key="item.id">
-                    <router-link :to="`/timetable/${item.year}${item.name}`"><h1>{{item.year}}{{item.name}}</h1></router-link>
+                    <router-link :to="`/plan/${item.year}${item.name}`"><h1>{{item.year}}{{item.name}}</h1></router-link>
                 </div>
             </div>
         </main>
     </div>
 </template>
-<style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"/>
+<style scoped lang="less" src="@/assets/style/views/timetable/timetable.less"></style>
+
 <script>
-import axios from "axios";
+import {useTimetableStore} from "@/stores/useTimetableStore";
+import {useApplicationLoadingStore} from "@/stores/appLoadingStore";
+import {computed} from "vue";
+import Navbar from '@/components/NavbarComponent.vue';
+
 export default {
     data: () => ({
-        name: "",
-        list:[],
-        props: ['elements'],
+        isOpen: false,
         elements: [
             {
-                name: 'odziały',
-                path: '/timetable/1AT'
+                name: 'Odziały',
+                path: '/plan/1AT'
             },
             {
-                name: 'nauczyciele',
-                path: '/timetable/2AT'
+                name: 'Nauczyciele',
+                path: '/plan/2AT'
             },
             {
-                name: 'sale',
-                path: '/timetable/3AT'
+                name: 'Sale',
+                path: '/plan/3AT'
+            },
+            {
+                name: 'Zastępstwa',
+                path: '/plan/zastepstwa'
             }
         ]
     }),
-    async mounted(){
-        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-        this.list=result.data;
+    components: {
+        Navbar
+    },
+    setup() {
+        const appLoading = useApplicationLoadingStore();
+        appLoading.applicationLoading();
+        const store = useTimetableStore()
+        store.findAllClasses().then(() => {
+            appLoading.applicationLoaded();
+        })
+        return {
+            list: computed(() => store.getClasses)
+        }
     }
 }
+
 </script>

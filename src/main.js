@@ -15,7 +15,8 @@ import {
     faCaretUp,
     faCaretDown,
     faAngleRight,
-    faAngleLeft
+    faAngleLeft,
+    faBars
 
 } from "@fortawesome/free-solid-svg-icons";
 import 'vue-toastification/dist/index.css';
@@ -27,7 +28,7 @@ import config from '../config.json';
 import modalElement from "@/components/elements/ModalElement.vue";
 import inputElement from "@/components/elements/InputElement.vue";
 
-library.add(faArrowLeft, faUsers, faHouse, faNewspaper, faUser, faLock, faEdit, faPlus, faCaretUp, faCaretDown, faAngleRight, faAngleLeft)
+library.add(faArrowLeft, faUsers, faHouse, faNewspaper, faUser, faLock, faEdit, faPlus, faCaretUp, faCaretDown, faAngleRight, faAngleLeft, faBars)
 
 axios.defaults.baseURL = config.system.api_url;
 axios.defaults.headers.Authorization = `Bearer ${localStorage.accessToken}`

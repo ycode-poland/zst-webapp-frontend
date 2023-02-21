@@ -2,7 +2,7 @@
     <div>
         <nav>
             <div class="nav-bar">
-                <a href="http://localhost:8080/"><font-awesome-icon icon="fa-solid fa-house" /></a>
+                <router-link to="/"><font-awesome-icon icon="fa-solid fa-house" /></router-link>
                 <p>{{ $route.params.class }}</p>
                 <p>ok</p>
             </div>
@@ -13,7 +13,7 @@
                 <div class="unit">
                     <ul v-if='up' class="unit-down">
                         <template v-for="item in list1" :key="item.id">
-                            <li><router-link :to="`/timetable/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
+                            <li><router-link :to="`/plan/${item.year}${item.name}`">{{ item.year }}{{ item.name }}</router-link></li>
                         </template>
                     </ul>
                     <ul v-else class="unit-up"></ul>
@@ -59,7 +59,7 @@ import axios from "axios";
 export default {
     name: 'ErrorView',
     data: () => ({
-        days: ['Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek'],
+        days: ['Poniedziałek', 'Wtorek', 'środa', 'Czwartek', 'Piątek'],
         hours: [],
         weekdays: [],
         list: [],
@@ -75,14 +75,14 @@ export default {
             this.weekdays = response.data.weekdays;
         })
     },
-    async updated(){
-        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
-            this.list1=result.data;
-            this.list = response.data.weekdays
-            this.hours = response.data.hours
-            this.weekdays = response.data.weekdays
-        })
-    }
+    // async updated(){
+    //     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+    //     axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+    //         this.list1=result.data;
+    //         this.list = response.data.weekdays
+    //         this.hours = response.data.hours
+    //         this.weekdays = response.data.weekdays
+    //     })
+    // }
 }
 </script>
