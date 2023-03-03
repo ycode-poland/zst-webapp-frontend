@@ -7,10 +7,36 @@
                 <font-awesome-icon icon="fa-solid fa-bars"/>
             </div>
         </nav>
-
         <main>
             <div class="time-table">
-                <table>
+                <div class="table">
+                    <div class="t-head">
+                        <p class="number">Nr.</p>
+                        <p class="hours">godz.</p>
+                        <p v-for="(day,index) in days" :key="day">{{days[index]}}</p>
+                    </div>
+                    <div class="t-body">
+                        <div >
+
+                        </div>
+                        <div v-for="(item, i) in weekdays" :key="item" class="day">
+                            <div class="ok">
+                                <p>{{i}}. <span>{{hours[i]}}</span></p>
+                            </div>
+                            <div class="ok1">
+                                <template v-for="lesson in item" :key="lesson">
+                                    <template v-if="lesson">
+                                        <template v-for="subject in lesson.subjects" :key="subject">
+                                            <p> {{subject.subject}} <span>S.{{subject.classroom}}<span>{{subject.teacher}}</span></span></p>
+                                        </template>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--    <table>
                     <thead>
                         <tr>
                             <th class="number">Nr.</th>
@@ -33,12 +59,12 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
+                </table> -->
+
             <!-- <div class="time-table-response">
             </div> -->
         </main>
-        <div class="side-bar">
+        <!-- <div class="side-bar">
             <div class="params">
                 <p>{{ $route.params.class }}</p>
             </div>
@@ -55,7 +81,7 @@
                 <p>Sala<font-awesome-icon icon="fa-solid fa-caret-down" /> </p>
                 <p>Nauczyciel<font-awesome-icon icon="fa-solid fa-caret-down" /></p>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <style scoped lang="less" src="@/assets/style/views/timetable/classTimetable/schoolboard.less"/>
@@ -74,21 +100,21 @@ export default {
     }),
     async created() {
         let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Column`).then(response => {
             this.list1=result.data;
             this.list = response.data.weekdays;
             this.hours = response.data.hours;
             this.weekdays = response.data.weekdays;
         })
     },
-    async updated(){
-        let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
-        axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
-            this.list1=result.data;
-            this.list = response.data.weekdays
-            this.hours = response.data.hours
-            this.weekdays = response.data.weekdays
-        })
-    }
+    // async updated(){
+    //     let result = await axios.get("https://zst-timetable-scrapper.ycode.ovh/plans");
+    //     axios.get(`https://zst-timetable-scrapper.ycode.ovh/plans/${this.$route.params.class}?direction=Row`).then(response => {
+    //         this.list1=result.data;
+    //         this.list = response.data.weekdays
+    //         this.hours = response.data.hours
+    //         this.weekdays = response.data.weekdays
+    //     })
+    // }
 }
 </script>
