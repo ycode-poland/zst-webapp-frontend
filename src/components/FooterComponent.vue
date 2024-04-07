@@ -13,7 +13,7 @@
       </a>
     </div>
     <footer>
-      <h3 tabindex="0">&copy; 2022 - {{ new Date().getFullYear() }} Concept, Design & Code: <a href="https://ycode.ovh">ycode</a></h3>
+      <h3 tabindex="0">&copy; 2022 - {{ new Date().getFullYear() }} Concept, Design & Code: <a href="https://ycode.pl">ycode</a></h3>
     </footer>
   </div>
 </template>
@@ -26,27 +26,27 @@ export default {
   data: () => ({
     slidesToShow: 4,
     sponsors: [
-      { url: 'https://zetorzeszow.pl/', imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xzetorzeszow.png.pagespeed.ic.mgpsVZUxQq.webp', name: 'ZETO-Rzeszów' },
-      { url: 'https://fibrain.pl/', imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xfibrain.png.pagespeed.ic.twamiqpulL.webp', name: 'fibrain' },
-      { url: 'https://pl.asseco.com/', imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xasseco_white.png.pagespeed.ic.236UJLdCwU.webp', name: 'asseco' },
-      { url: 'https://roxart.pl/', imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xroxart.png.pagespeed.ic.I8Q2Z97vtd.webp', name: 'roxart' },
-      { url: 'https://pwrze.com/', imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xpratt_w_white.png.pagespeed.ic.GTJG363hqM.webp', name: 'pwrze' }
+      { url: 'https://zetorzeszow.pl/', imageUrl: 'https://cdn.yshop.pl/files/J9WWi.webp', name: 'ZETO-Rzeszów' },
+      { url: 'https://fibrain.pl/', imageUrl: 'https://cdn.yshop.pl/files/iX7jS.webp', name: 'fibrain' },
+      { url: 'https://pl.asseco.com/', imageUrl: 'https://cdn.yshop.pl/files/kj7X6.webp', name: 'asseco' },
+      { url: 'https://roxart.pl/', imageUrl: 'https://cdn.yshop.pl/files/NqrJ6.webp', name: 'roxart' },
+      { url: 'https://pwrze.com/', imageUrl: 'https://cdn.yshop.pl/files/7WuJj.webp', name: 'pwrze' }
     ],
     images: [
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xmobitouch.jpg.pagespeed.ic.cP01m29W0Z.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xasseco.jpg.pagespeed.ic.unsgEuSrMR.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xg2a.png.pagespeed.ic.2A8XZYouLB.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xzeto.png.pagespeed.ic.Ij4IPvbVYJ.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xpratt.png.pagespeed.ic.e6CQnIS13m.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xfibrain-logo.png.pagespeed.ic.9oui3ZycVD.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xprimebit.png.pagespeed.ic.7hmPdd6wxU.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xroxart_logo_kolor.png.pagespeed.ic.5FCEGBLMI-.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xcc-metal.jpg.pagespeed.ic.J70Ax2YPAp.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xlogo-wsiiz.png.pagespeed.ic.9XXt-xVCJY.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xpolitechnika.jpg.pagespeed.ic.6hUNk-XTUX.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xbsh.jpg.pagespeed.ic.J2_hKp0MXJ.jpg', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xff.jpg.pagespeed.ic.Yes9lrXz9g.webp', name: 'mobitouch' },
-      { imageUrl: 'http://www.zstrzeszow.pl/img/partner_logos/xwbx.jpg.pagespeed.ic.--GkZBI9hi.webp', name: 'mobitouch' }
+      { imageUrl: 'https://cdn.yshop.pl/files/kmPBo.webp', name: 'mobitouch' },
+      { imageUrl: 'https://cdn.yshop.pl/files/EylnG.webp', name: 'asseco' },
+      { imageUrl: 'https://cdn.yshop.pl/files/fF9E3.webp', name: 'g2a' },
+      { imageUrl: 'https://cdn.yshop.pl/files/IXe8x.webp', name: 'zeto' },
+      { imageUrl: 'https://cdn.yshop.pl/files/nRtWQ.webp', name: 'pratt&whiteney' },
+      { imageUrl: 'https://cdn.yshop.pl/files/W6uN0.webp', name: 'fibrain' },
+      { imageUrl: 'https://cdn.yshop.pl/files/luIjh.webp', name: 'primebit' },
+      { imageUrl: 'https://cdn.yshop.pl/files/LBK1A.webp', name: 'roxart' },
+      { imageUrl: 'https://cdn.yshop.pl/files/zX5WX.webp', name: 'cc-metal' },
+      { imageUrl: 'https://cdn.yshop.pl/files/gOFka.webp', name: 'WSIiZ' },
+      { imageUrl: 'https://cdn.yshop.pl/files/MV5fa.webp', name: 'politechnika' },
+      { imageUrl: 'https://cdn.yshop.pl/files/fjJgH.jpg', name: 'bsh' },
+      { imageUrl: 'https://cdn.yshop.pl/files/legU0.webp', name: 'ff' },
+      { imageUrl: 'https://cdn.yshop.pl/files/GLKek.webp', name: 'wbx' }
     ]
   }),
   created() {
