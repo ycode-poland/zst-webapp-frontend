@@ -1,5 +1,7 @@
 <template>
-    <PageLoader v-if="!isApplicationLoading"/>
+    <!-- <PageLoader v-if="!isApplicationLoading"/> -->
+    <PageLoader />
+
     <Header v-if="!$route.name.startsWith('schoolboard')"/>
     <Navbar v-if="!$route.name.startsWith('timetable') && !$route.name.startsWith('schoolboard')" :elements="elements"/>
     <router-view/>
